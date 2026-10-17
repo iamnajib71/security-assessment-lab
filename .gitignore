@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+.venv/
+tmp/
+private/
+AGENTS.md
+CLAUDE.md
+.coverage

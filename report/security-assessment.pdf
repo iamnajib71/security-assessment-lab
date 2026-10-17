@@ -1,0 +1,885 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document (opensource)
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/Contents 99 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 98 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+5 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/smb-manual.txt)
+>> /Border [ 0 0 0 ] /Rect [ 48 568.0898 122.529 578.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+6 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/smb-manual.txt)
+>> /Border [ 0 0 0 ] /Rect [ 142.545 568.0898 205.068 578.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+7 0 obj
+<<
+/Annots [ 5 0 R 6 0 R ] /Contents 100 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 98 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+8 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/ad-manual.txt)
+>> /Border [ 0 0 0 ] /Rect [ 48 607.0898 122.529 617.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+9 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/ad-manual.txt)
+>> /Border [ 0 0 0 ] /Rect [ 142.545 607.0898 205.068 617.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+10 0 obj
+<<
+/Annots [ 8 0 R 9 0 R ] /Contents 101 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 98 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+11 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/http-manual.json)
+>> /Border [ 0 0 0 ] /Rect [ 48 567.0898 122.529 577.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+12 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/http-manual.json)
+>> /Border [ 0 0 0 ] /Rect [ 142.545 567.0898 205.068 577.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+13 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/docs/remediation.md)
+>> /Border [ 0 0 0 ] /Rect [ 66.513 317.0898 124.041 327.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+14 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/docs/manual-verification.md)
+>> /Border [ 0 0 0 ] /Rect [ 144.057 317.0898 216.588 327.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+15 0 obj
+<<
+/Annots [ 11 0 R 12 0 R 13 0 R 14 0 R ] /Contents 102 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 98 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+16 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/version-reference.json)
+>> /Border [ 0 0 0 ] /Rect [ 326.109 602.0898 425.649 612.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+17 0 obj
+<<
+/Annots [ 16 0 R ] /Contents 103 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 98 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+18 0 obj
+<<
+/Contents 104 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 98 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+19 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/ad-groups-acls.txt)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 759.0898 161.04 769.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+20 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/ad-manual.txt)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 746.0898 144.039 756.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+21 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/ad-policy.txt)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 733.0898 137.532 743.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+22 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/checks.json)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 720.0898 136.533 730.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+23 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/credential-quality.json)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 707.0898 176.547 717.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+24 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/discovery-console.txt)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 694.0898 173.541 704.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+25 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/discovery.gnmap)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 681.0898 157.539 691.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+26 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/discovery.nmap)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 668.0898 152.535 678.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+27 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/discovery.xml)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 655.0898 144.021 665.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+28 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/firewall.txt)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 642.0898 129.522 652.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+29 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/http-manual.json)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 629.0898 156.045 639.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+30 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/images.json)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 616.0898 137.532 626.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+31 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/inventory.json)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 603.0898 145.038 613.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+32 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/inventory.md)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 590.0898 141.033 600.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+33 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/loopback-inventory.json)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 577.0898 184.053 587.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+34 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/nmap-version.txt)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 564.0898 156.036 574.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+35 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/nuclei-console.txt)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 551.0898 159.042 561.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+36 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/nuclei-normalized.json)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 538.0898 179.04 548.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+37 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/nuclei-version.txt)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 525.0898 157.035 535.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+38 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/nuclei.jsonl)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 512.0898 134.031 522.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+39 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/scanner.txt)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 499.0898 133.536 509.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+40 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/scope.json)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 486.0898 132.537 496.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+41 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/services-console.txt)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 473.0898 168.537 483.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+42 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/services.gnmap)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 460.0898 152.535 470.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+43 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/services.nmap)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 447.0898 147.531 457.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+44 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/services.xml)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 434.0898 139.017 444.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+45 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/sha256.json)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 421.0898 138.045 431.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+46 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/smb-manual.txt)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 408.0898 151.032 418.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+47 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/urls.txt)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 395.0898 116.022 405.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+48 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/wg-admin-console.txt)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 382.0898 174.54 392.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+49 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/wg-admin.gnmap)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 369.0898 158.538 379.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+50 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/wg-admin.nmap)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 356.0898 153.534 366.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+51 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T034611Z-baseline/wg-admin.xml)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 343.0898 145.02 353.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+52 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/ad-groups-acls.txt)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 330.0898 149.034 340.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+53 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/ad-manual.txt)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 317.0898 132.033 327.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+54 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/ad-policy.txt)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 304.0898 125.526 314.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+55 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/admin-auth.json)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 291.0898 141.537 301.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+56 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/checks.json)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 278.0898 124.527 288.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+57 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/credential-quality.json)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 265.0898 164.541 275.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+58 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/discovery-console.txt)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 252.0898 161.535 262.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+59 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/discovery.gnmap)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 239.0898 145.533 249.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+60 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/discovery.nmap)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 226.0898 140.529 236.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+61 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/discovery.xml)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 213.0898 132.015 223.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+62 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/firewall.txt)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 200.0898 117.516 210.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+63 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/http-manual.json)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 187.0898 144.039 197.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+64 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/images.json)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 174.0898 125.526 184.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+65 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/inventory.json)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 161.0898 133.032 171.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+66 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/inventory.md)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 148.0898 129.027 158.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+67 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/loopback-inventory.json)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 135.0898 172.047 145.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+68 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/nmap-version.txt)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 122.0898 144.03 132.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+69 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/nuclei-console.txt)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 109.0898 147.036 119.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+70 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/nuclei-normalized.json)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 96.08976 167.034 106.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+71 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/nuclei-version.txt)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 83.08976 145.029 93.88976 ] /Subtype /Link /Type /Annot
+>>
+endobj
+72 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/nuclei.jsonl)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 70.08976 122.025 80.88976 ] /Subtype /Link /Type /Annot
+>>
+endobj
+73 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/runtime-versions.json)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 57.08976 163.029 67.88976 ] /Subtype /Link /Type /Annot
+>>
+endobj
+74 0 obj
+<<
+/Annots [ 19 0 R 20 0 R 21 0 R 22 0 R 23 0 R 24 0 R 25 0 R 26 0 R 27 0 R 28 0 R 
+  29 0 R 30 0 R 31 0 R 32 0 R 33 0 R 34 0 R 35 0 R 36 0 R 37 0 R 38 0 R 
+  39 0 R 40 0 R 41 0 R 42 0 R 43 0 R 44 0 R 45 0 R 46 0 R 47 0 R 48 0 R 
+  49 0 R 50 0 R 51 0 R 52 0 R 53 0 R 54 0 R 55 0 R 56 0 R 57 0 R 58 0 R 
+  59 0 R 60 0 R 61 0 R 62 0 R 63 0 R 64 0 R 65 0 R 66 0 R 67 0 R 68 0 R 
+  69 0 R 70 0 R 71 0 R 72 0 R 73 0 R ] /Contents 105 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 98 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+75 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/scanner.txt)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 770.0898 121.53 780.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+76 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/scope.json)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 757.0898 120.531 767.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+77 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/services-console.txt)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 744.0898 156.531 754.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+78 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/services.gnmap)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 731.0898 140.529 741.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+79 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/services.nmap)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 718.0898 135.525 728.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+80 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/services.xml)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 705.0898 127.011 715.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+81 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/sha256.json)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 692.0898 126.039 702.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+82 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/smb-manual.txt)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 679.0898 139.026 689.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+83 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/smb-negotiate.json)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 666.0898 153.543 676.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+84 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/urls.txt)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 653.0898 104.016 663.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+85 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/wg-admin-console.txt)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 640.0898 162.534 650.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+86 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/wg-admin.gnmap)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 627.0898 146.532 637.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+87 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/wg-admin.nmap)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 614.0898 141.528 624.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+88 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/iamnajib71/security-assessment-lab/blob/main/evidence/20261017T133728Z-retest/wg-admin.xml)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 601.0898 133.014 611.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+89 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://nmap.org/book/nse-usage.html)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 502.0898 142.527 512.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+90 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/projectdiscovery/nuclei)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 489.0898 142.032 499.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+91 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/projectdiscovery/nuclei-templates/tree/17f5725dc10ced09f464dd2d255c19957aad51e7)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 476.0898 199.551 486.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+92 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 463.0898 121.026 473.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+93 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.samba.org/samba/docs/current/man-html/samba-tool.8.html)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 450.0898 129.027 460.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+94 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://caddyserver.com/docs/caddyfile/directives/tls)
+>> /Border [ 0 0 0 ] /Rect [ 53.499 437.0898 130.53 447.8898 ] /Subtype /Link /Type /Annot
+>>
+endobj
+95 0 obj
+<<
+/Annots [ 75 0 R 76 0 R 77 0 R 78 0 R 79 0 R 80 0 R 81 0 R 82 0 R 83 0 R 84 0 R 
+  85 0 R 86 0 R 87 0 R 88 0 R 89 0 R 90 0 R 91 0 R 92 0 R 93 0 R 94 0 R ] /Contents 106 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 98 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+96 0 obj
+<<
+/PageMode /UseNone /Pages 98 0 R /Type /Catalog
+>>
+endobj
+97 0 obj
+<<
+/Author (Nazmul Hassan) /CreationDate (D:20261018004103+11'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20261018004103+11'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (\(unspecified\)) /Title (IT Support Homelab - Security Assessment) /Trapped /False
+>>
+endobj
+98 0 obj
+<<
+/Count 8 /Kids [ 4 0 R 7 0 R 10 0 R 15 0 R 17 0 R 18 0 R 74 0 R 95 0 R ] /Type /Pages
+>>
+endobj
+99 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 2710
+>>
+stream
+Gau0Dd;n!M&q0LUm%`<t."\6C.XlF*Ue/UHgdnmbREjT=^_MP?";h-'X@tkXc@V93-aD*5EaPp<&mR!5Sis\.K,A'*iNK0\I[e7='a'c;HjM?^176t7bP>:Z0??88o%k:]aZ,bVPf;lD8Kc/&fpI>mBR/d)6'ad!_n:`q>Q20N'ti\SE=Mr`]8]9AjK2c,.mIMMap>.XASP1l!Sf\WY"%f.Jb_g's4YMuF$.a*W(892c946kp??D.I0#N<Mi(tIJ>gdXSWPr3,/tHTE\Vm*!"2:j&isHm8)kdH+GP.Jk;*gSQ%"&k(_#BJ*+j':)!g.'(\fVAiKMl#cHlJPqt#`]`lYt+C`5'l;I&CO4_EJBUL+"&$9Yd4H3`4Le6=UG]`[g,4?>-<"V'1^Yr.iOfRdHRX[5+"-]*Zi@/N(FoNt,4Sj`KMXqbuX.5\3N"'d(\2;hQaQG\G]^BN+%Y:r(")BLsp]\g4d,rNDe,Yi@qZcP=)Z^e92_aXSRJf@HM*e\gCR\f6o.6\.lL,FIQs(?ca?In=&Y8d6101Y'JVrN3\?TuUS++62.i^l6b$Aaij*@FdAdVKn!M^*>h_C:C^b*NVe=teJ5Y,uJW[msq#ipU?E`nphR"_%%$#,3]G/u>`+$XiH>9A.ku8DqL("q\[f=fpo^b"=;j<tV74PRgk#3cn2-Gl]Xe"uR5*X^7cf98R3_@rQ,5;BW'"o58c<F/dci]s2"nI"e6)]X=3lLRP[B=Meo*'M<&KF3n#f[K9)m@Z[%9,a9'Gi3@1@!S#n_'tOc&*/C65b^q#E/):34faH=jDnR;1Jh+5lJ7ICbNKu5nP$XkE:5V#ZNYLMFqU7ti';iSUn5c4bZTP1pA+=,or4<(\P&CnB(e9OEWDh#"E;iTG6ERYkVcTa5N'fqUF/dPJ:jdgd@7`KULr+f:6e<dTE8N-e\Kc`ZV,U"cOKt/"U@?0?#LHSPrQ`->(9<bUEj.W6*.hlDW`_"ob]5-9%MdU2-:sH?;&mP"Q4KWcXTOk_a:L)!5TI!Z)\7Iq`H2)2:\+UG=ckBn`A&;sSu4,kC[$LTUYS9&ck2J;"ao7fOZ?=O"pOO\Q_d.!RK7),UBM,PQ@mp72Gn-G%Bg>=K,tNN;5onJ4)\?^>Dn&shuqYX?OT5Ek;P36o3k:qoDReeCFj$>F@^s?.UXbIL_Yeo/A\NkBrb6I+-+t6cnl+_mQ2PCE_GfIC@n8g$1Ah_!#,a$Y[#sV>n*IF/mPs,I2r%/-mQF#OtT[*Y)&BlL*Htg=\@).B^:I%>Y0JK=I@&-"Q)Yn6NJ.Lm:"oODe%%dX5VXsOQg/Yqt;%#EPcB#g;*NA44"27NOVIdNda(o-S1RZ-sX:jG]U@>!%UY[+f8d%.?C'()8_Ps*Q\)Ef/Ip>S<bcAGq:1bNu_`d!:YP)j9fd;0;"DljJsJQEs$Z23Lb6bn"PTG.7rsEfh1N(6A>"KUHiSW\Pc^ZCVGMNCpYt1KVi$'.A5YZSlag3V//8B:6r1rqU9!>/c(_]NAB%m05ja;J$`d`lu;tPRnUl09;b"$3SJ0_S?iM#i^si*HOU>!'8k+SN4jublNLJ$P0Mo>LEX*S#qYpjf)Z_eS4%=#o-X)X8k<=hoU7_`OMu2Jo;ar&2iY\8en?)cB>8NgXeX#kEQMGHiUZ[\*+'o[!h?L#nI@J*YP-LFEa>@rXW-XfoLKk8#GKiabC^Y\B\*[EBuF,lJj3A+ej:TQ4$]1EDDb/'YNPL=q#0<%h\k5Mr5O9+:G"Wr7Lk.",tSX"*M'01LoL]LAeA93l,PSd00!nod(.QceP3jCnerFAUtC\WCYC,fK+tkSKAmi!C:U(s/?U::/qB:reDMq1NauilSUZ\rp\mH,is=L^h1f8'g4j.X@0s?kZK@$tdOa4)`b-ZiV`o5GP_4EeBom]:b&ncASaG,C=M=gbqPNrEQ.bKH@5?-%k#sAD\I6b@GUWA*8MpF6]t5;ujn>:g1qZ[/%1aLo1j3h^rT\'i-MdB@\1IU0!;E'`0Bk=SlEAlWkknI)F<L0/5W2X]RbB1e]_pF1TE\&!JIC@UeY`utMo6"fAC)T:-$@*o2rO#17OnX%@4_)V0.&[,XkdMIU/<XA9TlPeD7&m;71$,&36q[9HKQ+CU^<jN4O?JK'N1H+T_?:;U(?th=HU+P_PGbH.e$$@q[4<D+V^]H18TsVeO33W4j.5cr*BV2\:?M6VT?YH0u-D0=dYLMq)C4BYNA3>os4#>WhN];]t]2NCTb+kpS:%!L$[Jq11<CcQ@.6K+'>VC;XC_ENRN][P60AMac;6@cgqH2ds,'7)+;r4Yt7^&CRQRXaGMDTP6<GRo%,7b%\G?4&59UH5PYYJ_^%<iOkH!c\G\3!:@mWEq=)G&31PE#LG9R:ijX^A=gr*b>.C1$eii=VLN2nF4tgi/0ft-U#u8*Q5Dn_TTt^I7S?0Tj$0f5^>qI-eq1NTkKa[?gJ)*8>G8d*.GB+,\':dpHbu(]@E;9O:ko+GDLF`2?fFmCse"Ei-.U[NHbK!+^78o4.RZ/!?pjm5qV^3QNQAjh$kMjNF?IJ0c6[PXq1u)%L`MlEmpb;[f"hj\\@/e1aK9'ZmAC>mE/uU:Z+Y'ch4J'Fehp8#22S1#-LFuF<TO8OOEGp`,=Mie;coq<l]fbb#H+pb!=`;Kh]e)g%>E\=mpAPQWYrE+LqV<+>8[je1HQsR,M\aRs_^cOnr=A'oOUD~>endstream
+endobj
+100 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 1316
+>>
+stream
+Gat=)bAJ7Z&A7<ZlDQ8.n[p-,Cuet/nSWm05pB`5^9fjOM[>.YP8lXoo'm+56^Hbt]N?0WLmmS2Wig(`L_1kG^I8<2XDi3J+A&il+N^AuX&&Mp)YN8^3*o"Zr\VdGBtcisa4VY2&`rV3R_[d7a1IcHneC<sWs[m&qH5Z_J!"fJnI(s21tr<oIVZ%_aX*/`Up)]k.p@RqA*5>mrXDocYkk-80bg5A79$)SfhalgHgGXWCL:I5T128S-m5P;h'e0Dn['\UV.hh^(PoAE)D@!*:rgXEd?D`f8`"2Z"O?&hq56fS@"RLj"e<6U;Vsf%R+b3.8aTs]1A^P\Np1?j7lZM>G?qRMZaT*5Qa3U[$^^DhQ^GRoBBQhD05RFna7c)V:0LJ>5!95sc!CR9bW?N\1DK#N84at!j%qO9(_*h)8APs.)T">2KVth^M[/LUBQOfAb>'R2:)`M-/8DIs$<`R*8.Eb"*^SYHq!K>Rjh!ucFs%s\3I!@L)>gOX]h<rE2#@Mf^Rme28F>)Fp>@%#EK+NlOFp]Fg6Bu>8S3nUInK;2n)\TLr1d`V25I#q0CKe7]M:cS2\N4jU^)e2Z46/jo_]K4nZ9DL"_%$mQJE)9+&;s+>:]XsA6"i_&["hNVMt-Y>EToEmSqS.`E!<K1iU<6DR3jOCV6uaO8!]7Aq=j?Ep(G.)2tai2l(E=<c4_+@/\Q_dnZPjhOCMlbOA`URN*iW):oVRE7I"?3#54r32oTn\/DWM[Ghhb`^:]+<[Z)Pc(!!PKMkth5+$&No^VU05<l>8T!(>nZE&t.**g$3c9iIJY=X+3P35c*/mBT,E]P2;nTEl31OeU(iI)PsXUqSZ&>\9t<!l5YO%ZHD$Z6RD0FV/nW"S'a7dJPM<GR1_P-od$Cl<M6F<+B)'hRdX_&"'!*(gI/V.%u5YVERLHAYTB,<TdFn&9n+mslI4)nMS+H3aE]HkV1!?/^=698Tn$Z^"!%[E>kD*jSBR+198S5(TZ7nO=?!^(46\r5(1@92:Tq8b[-rmu![2>McL:6WQ4"U+kF'qL4NPIqU.[X@!>e]G&MtHNn9M:U.27T4-F-pWA^$mr@l0#K=m\[HiO&iq=.IZ<9:CE^[8'RC?X3$otWc&-Ok[[dTF6/Z8=/8<l@@LM@glP,3rDF=ZpT&\`;)V>U'nZ"-'9GSnjj<2<1X`]f,=,$;Kil_FnMF8sf!HcA%"0NEAX%$lV/E4$+Z#XKeCmc)[@'7H[fI-rVcj7JOfoUh-6"oA\a)#MbP_J!kI66-hbM0HHTjZ)Np\19@!hfuT5^Ds>#'Rmc@EoNDt7fNJbmbpJ~>endstream
+endobj
+101 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 1159
+>>
+stream
+Gat=)9lK#^&A@ZchN;(QNbrSdM<7&Yaj*FN^-K<Y?D<HcL7[W?dbTXhPTRYT",9L"=fi4#>V<d;mo<@L6AQ1MIEs3Y3PjBCKIFj97$If\-6lbk>+9d!_h4VkM$Dcq9a1ldYWIYN"A(gL,FGH+?XlPr@`1E',hf`oLTCVB1M`Dq/+/^\9SZVcV@EPk"bb0h^e@B6ll"#NZ<!-/^L?[BPM\;][_QU?"^0XLD;i*RBeQTcI"m)7%C0f3+d]<t<Y4uB1s6HKEArj^#eESG%^M^/LIaPkfhIDRWP-Bck4X$Zl@^lQpm[4sjGM,Q@a;&\C/]XW$$.kb3t&sg]\'p?B1u%AmZDm14o@])mHkMYiUAh/6-ZE6ZPr'S??*m_T`Q5OEb$1*GX]FXj\D9[cL>CcG<ZR,_on5XipJHK7/\uukRE<@Jo;qaa)gCDQTTIs.je(q1<>m;GgL\E@;&D"=fag&:f6=Z:#T];"VVV:Qh<][G8_E5gj2*aDDd`u^2LutRga.qCH33l8SliF]^kO-/TS\;U`qe_6J27?NHf6UeXtlAa1@NY]MqRD`uJFt7XB=i6SB05AAPo>^)cr79?%]KT'K"Z$d?$:q5W#CaBC.*S*A(h+K:WKVY8RK1g4om-[#(XiLZ&39jH.b`bDIfmB92`9OL/@QbK(sX7No#UUZ:6j*M$5#`dtN)eN,t?/P&<e(j/"g.JF]_(\l&$1!ONe(mCp\0k3i,N4s"l)c7/FtB$bcY:!^+8fe#(m922opBRc\O+CQ'4M^7Z/,Z*auUC97_&V"i)3Ih4o#3$V]Cb\@ub`MPE+K_q_D,-2!7?onsuc+b`^nAc8!$Sh)ntk*o?m9rUb@-0t]IWGoY[jq6UHfT8',gh-\d+4uuX0<4#0>>OW+U:=E_1QV:Kg0PQueV-K*)hq`U>ZmrVK<-Z07jg1hW@7pkh4mca(eAl+W`f2W;=T;NUDD1?h$%eb`qR*Mn)oLUWet1H8GK,97!d3i4b50=EMK)Neg5l6rQ9EZB%M*F.R,$[#Mpq@A'l<!&[mWYmB=1:F"K#)>+/7$%It>/(HM"u[%p5GIHpR3rcAp4l=DIH@'RFIhMb]=jIac)VRP1YiL>L%s[;n`p=t19^Ln"&KDXo\>m:#8#r;,HqrWX@<hqcQ76OU#G!H%[j])~>endstream
+endobj
+102 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 2745
+>>
+stream
+Gatm<gN)%.&q0LUoV6V'U.O/]f5-]s:NiVT'77aAln\c$-,^qAi$+Rfq=q&r.#N"R-(@UM>UbOuhp4<B!clAULjs[Rn9P6SD[Im^YUZ?6A.r)$_U#9hpA':]?Y6Y<Bf7#,-^Toho'tgT"PI<LR200hoQiR)JB8'd1K[Xrrg*Lg"U2XpkEq!bE4=G4LFi5&Z1;fITF>H?[\cC1f"deCk:5!\+0^&%X+.R,*"JQ8(>3.RT,iraoNqE6esTm\Hp5djMou:nlKlDkQI#0e@KG.q1nK^[+WF4Sq;pV(f/ZOgd#0h--mgYb$]=cXiVI_bO'r=GU68\@Djcq]6ZD7^<_R7h:EFsfXmUQ(r,MGN1RFuFSkJ]8J(]CrBR_#hhjQ]UKK&H."Ur5A8*<ab8(_a7aBUNOGI<bP_Jc,W"'E:LIt.pZ)WsC(;m.'g4R(I2r)LLhH#g"]`3G[?TSc=9*AB(.n^kuV%c!dDm3P[@']Y84/^pj\ecTZ)RlVnDB^f5bh@<2uV;B-YJs+ES7dDh>D1dAHe3`HF+dd<ef$:U868`.J"HEu]WAZA2]Rnk[SQ**bOg;et<EiBnLEIV)i11PfIOcGgesJ3SQ)<5Grgdb,rq5b7FM:TX*s,Bh1G<qX<)uT<9@q^.BXDM>@'**i;inh1CCpTTW/]<`!OE%NCI4!^Jei%9BEW+0#L7q=/'u:gVm!Zo8R3f8/Q8ML]$l4*kIj-q&75dFldA-Mi;@er"&lEk.ne"EOM$I:\r</sn*CX5XYD@U]NB03*s+Ll^`-ZRV&7!M\WN=0TZ1uU`mRrlM\QR:/I\S-F>DRGPI0R@=%7,TJj[.;(H[W,[;)7j*D9a%^lBimQq%Bt_k_I?6B&$W.<1#8bNmVk)pc9;]^OG!440OYfT!(0=t<o1d\L6Fid$Mi`rs,.XnVLhMi2%$cgiX5MHA890e+g6VeGc$?SKXoX3]ZQ`d-EjCRgI"nCDD6/hS!76grPs?CX^IF><U"^ABIYldDR,L6*b>'[i?*H6K*^WbXKg`-ki^h7)LqrIC]h-N?`2A9h_WCcoo(M[<oMqDV30_]1-t=Msj36)37G(#h'hB.$GGm.K?UVdgS\h[)u+*oZ*75['k`Uh1ZVFo)/cl*nH3<O-.%1pFVVOHa5iG#/XQ'J1k5kS>\T6P.Zi:MM#X:=gS1=<E(6A[&K!3QS!4a<!MW7S0eP%"?_J/HMLn9?D1PQp0G>77[RjK].L7!m(`r"bEnCmdYBWMrL3eA+ThS4O562g0:>F-4M?\-[<On_^opuG>(*!?i>4\".jUaEd;Kfk<FCCoDbHV]/NJS[Ve6%V.Q0q`d&]gB5<FDkXM1bGJ*^^HC.ue8Nj_KRV@et3(N/)U:(Z4)d&Rem'fk9eC;@lPBLD-EkHu51$RX1l(F<#;@BR''DJL28n6gDp=oX/.pB^jBDO"gcBkE.R;Rb+&kf%UM7Io]'C"hS*D2-b>VJ$k6A323==&\;R:'faYR='uAS\9@D_ei:M5j8.PP!*"[aKG2RfNuVUC#!"E>[_WK>+:B3X@4:enEl?enGQG*e^67\@?kj%lZGV;)?`<>FMCm/aanP1Uu"T]tB>61M)WcP]Y%?Y+XtQZt7(m5/=Hl:B)9QX@MO0p4IHid_AHph,G^\89djt4kQ]pq['&Oq3EI`H@sm:c,UqtanIX9L4G"m<"=S<cE/&&Nln%>>uOro*]b4j%F%]RD[j2flV[oj!_X;n+4>(S@qk>)1QCetb'MgemO0.PQK_+;$<Ko%-r,faG]m==T)UVgs0/cp!Vuet;(<`pIKk>#4<;[90B(f1G#E3?+F]U=g8nH<`es4.asq,ig)>tq=F<l.Y`'@G6;XG"ZCUK.SP&c9c)u&2_2U)/-FA\H.2BENTC5..Tkr)E`dk:Rag?HoM)K#qXf6gO=3*5f3$jN6*1UY"N_[nM/M24?d-Ce9EO7p3"gOI8/!6'Fr7,Yf5^IXM8h5,XhBOphTcmeE"uh9$U4o.8Tu%4UdO:2\:\t2F;TLE.0MI?E2Ti,]Fr7S1N+u$WCD/:[!rS@0n<&S3E_4/r"?q]p.uDs^h]dPl[.2TR+6]+$:bFP+@9(d6"^>MW-]=EWEIBCI4Ks'k\tLrQRJehhY[piXq:uoI25u2#V3gDK.-IbB^ql?(BQHU=ZBA13H6HBoXe\H;)<HjLZaJJWB%#)fGZF>4VrGbQUASIWEDlG\Sar]"VdH:CbNY@l10lN_BM2hcMS6Vr!`MEWn=@.rD'Z-DUalPI:`8_'3cu6]>m;fX6SZ[R**18[<p\?dUfHt_S,JHp3rJDf+mn:YmcGSG*jHad5.+,CRGFN["!Vb'V;8s(HK;^JO^_dp)+cK)^s+IkO&Bm#:^3b(q:Eq_Uc(<ACkDh!<T\]<KDDVg^ji-qAl%b*)t1J&H3!uZ^EWr]XV#*iBW-lUhH6a9)>lt?JN!hY;jq[`9bd(TE.tSRmG%V9`'\gZl#rtXRRmN;C2C)uL877I!-\ssqk:kIW^EEcSj)i3iGNoa24#RlL)+'3ZobQ,51O<mC5s1e+-f,r?rNh3hH1#QW&Mh_rk0!LQ5HqAGR;&uCS%!44dGp*H7ILTF!)KLQ0,[6';RGK^8341O)"VlM%2JjWL5-88Z@Gh+[h*O1?O4gIK7&3SqI<Q^#_^&MZPZ`]@_b1rRNl()7ir.mbU61CkL[!`a.qe8-lP*R?<.+&(]/?e]dW%"I9T,h,t9BKnreYW$@L(8CUTnE>j9A$_$eb/AVjer>-@o[C6~>endstream
+endobj
+103 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 1051
+>>
+stream
+Gas2HbAu>s&4Q?iMRuib9ULM.P.d>I.TJ99a,,sZ2B^D1@$(EkJ5VW#O.QIqMNY!,$SHs!pURaP8.["81ApGRpj7YJG6nnBbn`mn;Jc?OgWa220>m@LjjP\`nLRsuV=A<F3ETI\=TZ2CiFC.9.0n2(BsE$s5MEifHf:LAp^`E59f<Wth]&VFO@3Snd9plrC.&6a*')W6p91]G`oaI]@nrPj,qF8'cfqd:Y]#Fmq%?,YZ*IW$W8#;#"cJ9u.n_SA<uG@tXjSb,QbQD<841h[G8s18GYn[ib:dCs1)cI=MG=^d@V_FPS>*a0WrKGNqMcZAY8G,sr25DYejI:(;".tu]kRlHT'CsGfB$&3L*UN_[R*Ul9<D#/oY#$>XaG1ZY7K?Wo[d/g0+m;WH:@H682_;G!aKt^Ah50sPbhY=XLpp;@[7FF6D7tD^'hS^K<JBT>]4IZ6]UMqllB[_;jMCBYG7o!<-r-$^B>9&iR&UEPgJ$uSQ4Ci3B9`8;F\c$ZEl=dPO+II.!r9J<5MM-1uY,C*HjS+7hVF^>7%)VBD`g":U!dHK&C=<)]K&US["dIUmp=qV(LBr`,-meK@ge"W$LVrAgp@dEbq#tOW?;8"JF3r,2pgDD)gXZW"2]78U:p/*L-8.[:h8UA^AY8*%+sUK/ObPQ5UBrU@J/gc1&7!W`k8A!\pn`/2t]p$)<UsGc\TXaF_Gpa,0.YY[`j$Pf5TV4Nn!.l!"2616rH;kOn!KT5Y3uj70)3@^2Ib4fE:00PSHFA\*5uH;Chb-sVL%GZC_4q=>&![Bm^TKqX0p]!ohS,9`,j)1.r-0>kh5%U/Ei$86uW;L"?`_3o)pQJA&WWq5jT\QW[KoT%nHb`5+]2eTf&nhr<s._UJ>i>Lt9DPX7*midtf<`T+&</LG_-GkJZXcO7f?0\lXg"9tU=5WDHOG&g:kf@Y$D+R(Y@H@@C&r"AVU`-X"`cR5L8B0ZJAS.u*0$4kZ%pq&Mp"\Vd]<`<k_4Tb;5L8Q;j2PM*mXj1A*CaK^ZJl"`-%0DZhT("l\W9Mo/H,mO+RK[~>endstream
+endobj
+104 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 1550
+>>
+stream
+Gb"/i9lo&I&;KZM'mk$Y6OI0'6/</Le#$tk4'(+(hC&]=)2k.S8628FO7,=UOQs(nC1H%HnR0r=Z\s6'i"]W,":3B)cZ'E`D@$48'I\Um%8`/o)#aP#%sseUEoA4-RqTrI-439Ii<<_QMHj[+g0==A23WW"^a'>(3;Z[(Y8:.4[C!A!n1S#tNGar#0u%MXlFWY'Zl,3/\8,hB/OrW@X0&M3RK!E-0/.d[WFH=]KM!!&jVBND55)DIdjrN2/6/]H0Wob0HR['.VA,hbnVe3EEflJN4fOm#E7"T2##q[MU"l0ahTf`e9WE%#(6V[OF/[<82Y3eogrk2t]@s;/j!j*#!j7FZ6Bm^4k)^@S:ddQP#YK1&$8Fer.fr$PO>$a<L7:+b#:#^!=!Ec,@;I1./tW8!jZ:N_hsBLFf5o^18a1P9DDha_OQ2uU/e8So:akDor"<U9Ham$Yi+fsVm6`b^#J$q/..1HR[8g]HE[>[E3d"?.H5q>!EZCJ//7g(QBbm!EJ^/LB1e\jW\u\S-1BdDP)r4P)Ql$45[^3tU4b-<E_[dh"5LC*'M^9X,-R8bq<*2Zonm8dMh)70rH5r4a!OoXgcn3JB=q?,q-5/uaRKMXRXp0LV'@N,`dZh]!'SGON=B#F0[dEF;RL&3!C>:_U\XC@mQ'jI%$_K)u!t$du8O3cpUOjmN07jO?Qq#ClQ$Y#uG`ftLYKM5kJuqNV&?/?+84"1e65`Qc"IcA9&gE^l8N@/oLN/6L0opI`YV<*$">5-6M&4@l@)-'e6_K,=YFl_EkP%cjIK*ao)[s6WKF"rH+tOnWg!!'(Q]iu%+3tu&8_7HT%h,s`f+D]<A[q%O`i;PgY'MpjlbJ$4MMFK=-H"^F0[QT[@A#!I(X$c*^g5L.(_.n1NWTAHY$PYZ6";nb%(N?a(roM#N.p@\:`&9N1s<,\T\2-u'oh;f0]9*Na1-eS*]_B[:cl)`3L`9Df`V_nCYK/um9t?rTlt04IAZCf*U'AhlLe:ZW9lgT^ZWG97lXJ(Gbu&H83t7Y:I^OD^AN1Q),EF6<Be@82JXg!5H`n)D"3)$===S\EZ3F<JZNHlF+urOs*8l!/3UX*YAS&M?C>Ho^cm-lLR1UQ3P7H08eVig$GeRQg4^!.TKfb?SXsLt[JG&D[ZfXlL@7#205ROn,uV_!h2^P!p:C3,O2@5iWd)@YKN.&*E9co`5QB/))(aC+q3""V]$>Mp.9s'O_FMROPkc`^M\7*X]-pV4W#PQ2cfR\\lEe$`O8<[1jJ+o.)f;A"B6,:>p"A-A7t!9Snkl%(NI95gF/*U%-eli+;se/eM=tSi/)SCUTloG]M72j#/DpDQ`m\:OioU2oj;fLRa/(N%KkBE>V/fm"k4%-n$ljJ6jI9fZJ([pn>s?D:(ADJY0'W*"LU.,L[tua)@koQoSjFMKF41QUDEa[%qYf6>3nV,MY)K\tooZ&QXKB^K]:WB9ebh/4e)a!,p)o/#[[Yl!jqZ>co3r6g/*I_didfV21q?uCjcSY(%%K!;:J,smC-qo7p&/d;\mP-'pE'Y@Ap"~>endstream
+endobj
+105 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 809
+>>
+stream
+Gatn'c#0%*'SZ;Q'R,sG_>siFB%^4E\u8e4iWVI,B#][WL^iqhp#.DW0ZbT@`g6i:@spQ8q>^aU80N\'4:;Vf[=R)E%'gkAHcQOp5k>Z'2iDC_%`<(jRRYsc08h]l,$hAC**?&QAHm#kVOs7o'KP5)BJeNBim2pIn:Q)6%K(q;#D4Yf6bfs&5%=uC$EdcL2(H<@mQGm"dIa'(H%>&KUgjUq7Et,1>0Zj-e[26nAbd7EWap7cY!M9jdt4Dr>1PR84C=EM)VD>DdrkUYFUCQfhVR@U'k8o^;"MquY!^[\,CG+H*'XGkAW'##8CQSgQ%VA[5M%[5,,hG@B,Ocd<U!UP[L?r)5-MkeiG&^;$TABN@$ZiOA]n(WeHN0W33$u<L3lnJi%8l2Xg:CX'/#M^rUJ[V$S/1Q:S-]\i/.Zf=XD$9*[PtX*^+l>ejP*0[V1!/<Uqtc-2S>V[$=tM4h=Q9XRT>"I)-UEgD\<u.MsJtW)Xi&?912f7GtOYhflDDj0qs%^-rC88[Cq9>B_9&kr+QtXR.oN4=6<`K!CJ%3\RUlhbQ$6Kp(kARWuh5buK#]:fMgS'%]5QMnH7+i5VFJQfNkfOJ#Sph-LH\F;m7S.@uP9(*P1(g$!WB038k$f,M"3qVWb7`aPA+<_GgCL7(TkL'rnNohdXrhP9P=,2N\ZdLS"(aEVn0"ZM,'JrfeW6H/**)+0c(-R;teHjbmPrAt]6.FRh8fl5r4,f>HRRgWk&I-c/LqHtY?30]8=6B^EGR73;DYA"\R:gFZ)X,Y2O'?:QZQPsL>YC-6<^B,2N!-5HY\,~>endstream
+endobj
+106 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 816
+>>
+stream
+Gatn$95iNL'SZ;ZMR0*Y(i3\$HeG9qdY\[6GgYn4>ejbhcHJ6n<I]C-0G-oWe7-(pXI8Bmmc3M)L]@Imh-2;c@tEV%&7L6$M(iNrM@"0X?Fuddb;i5M<Ao_t3!Y@o;'&/6nMj91fMrU!B823e6n&IsrfmF^[DXY@NbeR0h,]^[nCk(*/Uu1MdKhJ12MrcPK0)TK.FS29M?ajagH5u(,gKL-NRItn3sp?$]cNdhaYT5oGm9sgO2lnR@CH%l*&RmW"m/O1c#*Nn6::&LYQM4><u`0U_)R@hdcME+;16PL3BqV;CJC,jkC(?_@n]>X_&;'c6M@Amj9EJ7B-_WFWo^LN<kQ!Ll!g;u,s-+t4A+&i*EVi`ik"9XF0F,ATP7tbaaJ@Ze5j/`)/WFW^/1Z?PaW)pmV7%o>mtgOe)![aHhVI6,Ya<SjD``j>8]B&o'.TLHg-%C>>,d8nDi86W/Xe^%TerG5*lCNql9?kR+=T%M6F7tl/W2R`)0ZIQ4@.Q0Y@9;LlrI0lZ,SB4)diSV;BQ#Hu>O3TidL'8@*>l9);8D0N+)'9q6tp[2"@3l.;g+&=+*-IE<e,\?*eX5o?pWRh'EqU`GDJ0WL;s$(m1/O@?-S7DcOeZ]ffQm(2T=gTBttTNNrYOt6]nU/;Qb@&#[fo'DDaa86oJ#if3SZ[J$O8X?_+G:K#*'`[Pm8Fob=_E[6u2ra)g#(h2*)-aPKr3%_W-+%`.7XmSsEYdon-roT]^VH&5G'ZYYC/'VPIMR(GeXXOV3>4k8]-*R:^`.?dMdQ(piWZ1PA2T]%-F8o"&'%0q7.3($^JMB~>endstream
+endobj
+xref
+0 107
+0000000000 65535 f 
+0000000061 00000 n 
+0000000102 00000 n 
+0000000209 00000 n 
+0000000321 00000 n 
+0000000526 00000 n 
+0000000784 00000 n 
+0000001045 00000 n 
+0000001275 00000 n 
+0000001532 00000 n 
+0000001792 00000 n 
+0000002023 00000 n 
+0000002284 00000 n 
+0000002548 00000 n 
+0000002781 00000 n 
+0000003023 00000 n 
+0000003270 00000 n 
+0000003516 00000 n 
+0000003742 00000 n 
+0000003949 00000 n 
+0000004215 00000 n 
+0000004477 00000 n 
+0000004739 00000 n 
+0000004999 00000 n 
+0000005271 00000 n 
+0000005541 00000 n 
+0000005805 00000 n 
+0000006068 00000 n 
+0000006330 00000 n 
+0000006591 00000 n 
+0000006856 00000 n 
+0000007116 00000 n 
+0000007379 00000 n 
+0000007640 00000 n 
+0000007912 00000 n 
+0000008177 00000 n 
+0000008444 00000 n 
+0000008714 00000 n 
+0000008981 00000 n 
+0000009242 00000 n 
+0000009502 00000 n 
+0000009761 00000 n 
+0000010030 00000 n 
+0000010293 00000 n 
+0000010555 00000 n 
+0000010816 00000 n 
+0000011076 00000 n 
+0000011339 00000 n 
+0000011596 00000 n 
+0000011864 00000 n 
+0000012127 00000 n 
+0000012389 00000 n 
+0000012649 00000 n 
+0000012914 00000 n 
+0000013174 00000 n 
+0000013434 00000 n 
+0000013696 00000 n 
+0000013954 00000 n 
+0000014224 00000 n 
+0000014492 00000 n 
+0000014754 00000 n 
+0000015015 00000 n 
+0000015275 00000 n 
+0000015534 00000 n 
+0000015797 00000 n 
+0000016055 00000 n 
+0000016316 00000 n 
+0000016575 00000 n 
+0000016845 00000 n 
+0000017107 00000 n 
+0000017372 00000 n 
+0000017641 00000 n 
+0000017906 00000 n 
+0000018165 00000 n 
+0000018433 00000 n 
+0000019052 00000 n 
+0000019309 00000 n 
+0000019566 00000 n 
+0000019833 00000 n 
+0000020094 00000 n 
+0000020354 00000 n 
+0000020613 00000 n 
+0000020871 00000 n 
+0000021132 00000 n 
+0000021397 00000 n 
+0000021652 00000 n 
+0000021919 00000 n 
+0000022180 00000 n 
+0000022440 00000 n 
+0000022699 00000 n 
+0000022885 00000 n 
+0000023077 00000 n 
+0000023325 00000 n 
+0000023540 00000 n 
+0000023757 00000 n 
+0000023959 00000 n 
+0000024321 00000 n 
+0000024391 00000 n 
+0000024699 00000 n 
+0000024807 00000 n 
+0000027609 00000 n 
+0000029018 00000 n 
+0000030270 00000 n 
+0000033108 00000 n 
+0000034252 00000 n 
+0000035895 00000 n 
+0000036796 00000 n 
+trailer
+<<
+/ID 
+[<8c431b89d8db573d3c2dc8f15a445e2f><8c431b89d8db573d3c2dc8f15a445e2f>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 97 0 R
+/Root 96 0 R
+/Size 107
+>>
+startxref
+37704
+%%EOF

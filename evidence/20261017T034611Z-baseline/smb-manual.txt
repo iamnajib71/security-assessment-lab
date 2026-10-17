@@ -1,0 +1,102 @@
+$ smbclient //127.0.0.1/Finance -A [private credential file] -c ls --option="client signing=disabled"
+  .                                   D        0  Sat Oct 17 03:46:53 2026
+  ..                                  D        0  Tue Oct  6 04:54:05 2026
+  .deleted                           DH        0  Sat Oct 17 03:46:53 2026
+
+		1055762868 blocks of size 1024. 981804300 blocks available
+UNSIGNED_RC=0
+$ smbclient -L //127.0.0.1 -N
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	Public          Disk      Company-wide read/write
+	Finance         Disk      Finance team only
+	Scans           Disk      Scanner drop folder
+	IPC$            IPC       IPC Service (Samba Server)
+SMB1 disabled -- no workgroup available
+GUEST Public
+tree connect failed: NT_STATUS_ACCESS_DENIED
+GUEST Finance
+tree connect failed: NT_STATUS_ACCESS_DENIED
+GUEST Scans
+tree connect failed: NT_STATUS_ACCESS_DENIED
+BOB Finance (must deny)
+tree connect failed: NT_STATUS_ACCESS_DENIED
+BOB_FINANCE_RC=1
+BOB Public (authorized shared access)
+  .                                   D        0  Sat Oct 17 03:46:53 2026
+  ..                                  D        0  Tue Oct  6 04:54:05 2026
+  .deleted                           DH        0  Sat Oct 17 03:46:53 2026
+
+		1055762868 blocks of size 1024. 981804284 blocks available
+EFFECTIVE CONFIGURATION
+Load smb config files from /etc/samba/smb.conf
+Loaded services file OK.
+Server role: ROLE_STANDALONE
+
+# Global parameters
+[global]
+	client ipc max protocol = SMB3
+	client ipc min protocol = SMB2
+	client max protocol = SMB3
+	client min protocol = SMB2
+	disable spoolss = Yes
+	dns proxy = No
+	load printers = No
+	log file = /dev/stdout
+	map to guest = Bad User
+	max log size = 50
+	pam password change = Yes
+	printcap name = /dev/null
+	server min protocol = SMB2
+	server role = standalone server
+	server string = Samba Server
+	usershare allow guests = Yes
+	workgroup = MYGROUP
+	fruit:wipe_intentionally_left_blank_rfork = yes
+	fruit:veto_appledouble = no
+	fruit:time machine = yes
+	fruit:delete_empty_adfiles = yes
+	recycle:versions = yes
+	recycle:repository = .deleted
+	recycle:maxsize = 0
+	recycle:keeptree = yes
+	idmap config * : backend = tdb
+	aio read size = 0
+	aio write size = 0
+	create mask = 0664
+	directory mask = 0775
+	force create mode = 0664
+	force directory mode = 0775
+	force group = smb
+	force user = smbuser
+	printing = bsd
+	strict locking = No
+	vfs objects = catia fruit recycle streams_xattr
+
+
+[Public]
+	comment = Company-wide read/write
+	delete veto files = Yes
+	path = /shares/public
+	read only = No
+	valid users = @staff @finance
+	veto files = /.apdisk/.DS_Store/.TemporaryItems/.Trashes/desktop.ini/ehthumbs.db/Network Trash Folder/Temporary Items/Thumbs.db/
+
+
+[Finance]
+	comment = Finance team only
+	delete veto files = Yes
+	path = /shares/finance
+	read only = No
+	valid users = @finance
+	veto files = /.apdisk/.DS_Store/.TemporaryItems/.Trashes/desktop.ini/ehthumbs.db/Network Trash Folder/Temporary Items/Thumbs.db/
+
+
+[Scans]
+	comment = Scanner drop folder
+	delete veto files = Yes
+	path = /shares/scans
+	read only = No
+	valid users = @staff @finance
+	veto files = /.apdisk/.DS_Store/.TemporaryItems/.Trashes/desktop.ini/ehthumbs.db/Network Trash Folder/Temporary Items/Thumbs.db/

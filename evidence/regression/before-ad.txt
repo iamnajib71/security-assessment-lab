@@ -1,0 +1,81 @@
+﻿Lab simulation; 2026-10-17 14:46:56 Australia/Sydney
+PowerShell 5.1.26100.9711
+> compose ps directory
+9371b8ef5164d9d10f8fa704faaf94eb23f9fe7dfda0daaa11411d97624eabd6
+> directory health
+healthy
+> samba-tool ntacl sysvolcheck
+> samba-tool ou list
+OU=IT
+OU=Staff
+OU=Finance
+OU=Domain Controllers
+> samba-tool user list
+carol
+Administrator
+bob
+Guest
+krbtgt
+alice
+> samba-tool group listmembers GG-Staff
+alice
+bob
+carol
+> samba-tool group listmembers GG-Finance
+alice
+> samba-tool group listmembers GG-IT-Admins
+carol
+PASS AD directory healthy and seeded
+> samba-tool service desk tasks and real LDAP lockout
+Password information for domain 'DC=itops,DC=lab'
+
+Password complexity: on
+Store plaintext passwords: off
+Password history length: 12
+Minimum password length: 12
+Minimum password age (days): 0
+Maximum password age (days): 90
+Account lockout duration (mins): 15
+Account lockout threshold (attempts): 5
+Reset account lockout after (mins): 15
+User 'sdtest_1792208821_625' added successfully
+PASS create user in Staff
+Changed password OK
+PASS reset password and force change at next logon
+Changed password OK
+Bad bind 1: ldap_bind: Invalid credentials (49)
+Bad bind 2: ldap_bind: Invalid credentials (49)
+Bad bind 3: ldap_bind: Invalid credentials (49)
+Bad bind 4: ldap_bind: Invalid credentials (49)
+Bad bind 5: ldap_bind: Invalid credentials (49)
+PASS five bad binds set lockoutTime
+PASS locked account denies correct password
+# extended LDIF
+#
+# LDAPv3
+# base <> with scope baseObject
+# filter: (objectclass=*)
+# requesting: defaultNamingContext 
+#
+
+#
+dn:
+defaultNamingContext: DC=itops,DC=lab
+
+# search result
+search: 2
+result: 0 Success
+
+# numResponses: 2
+# numEntries: 1
+PASS unlock account and authenticate
+Added members to group GG-Finance
+PASS add user to GG-Finance
+alice
+sdtest_1792208821_625
+PASS disable leaver flag
+PASS disabled leaver denied authentication
+PASS temporary account removed
+PASS AD create/reset/force-change/lock/unlock/group/disable
+RESULT: 0 failed checks
+Evidence: H:\My Projects - IT\it-support-homelab\docs\evidence\ad-tasks-20261017-144656-880.txt

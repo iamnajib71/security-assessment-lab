@@ -1,0 +1,256 @@
+[
+  {
+    "template": "uptime-kuma-panel",
+    "name": "Uptime Kuma - Panel",
+    "severity": "info",
+    "asset": "172.20.0.4",
+    "matched": "http://172.20.0.4:3001/dashboard",
+    "classification": {
+      "cve-id": null,
+      "cwe-id": null,
+      "cpe": "cpe:2.3:a:uptime.kuma:uptime_kuma:*:*:*:*:*:*:*:*"
+    }
+  },
+  {
+    "template": "wg-easy-panel",
+    "name": "WireGuard Easy (wg-easy) - Login Panel",
+    "severity": "info",
+    "asset": "172.20.0.3",
+    "matched": "http://172.20.0.3:51821",
+    "classification": {}
+  },
+  {
+    "template": "http-missing-security-headers",
+    "name": "HTTP Missing Security Headers",
+    "severity": "info",
+    "asset": "172.20.0.3",
+    "matched": "http://172.20.0.3:51821",
+    "classification": {
+      "cve-id": null,
+      "cwe-id": [
+        "cwe-693"
+      ]
+    }
+  },
+  {
+    "template": "http-missing-security-headers",
+    "name": "HTTP Missing Security Headers",
+    "severity": "info",
+    "asset": "172.20.0.3",
+    "matched": "http://172.20.0.3:51821",
+    "classification": {
+      "cve-id": null,
+      "cwe-id": [
+        "cwe-693"
+      ]
+    }
+  },
+  {
+    "template": "http-missing-security-headers",
+    "name": "HTTP Missing Security Headers",
+    "severity": "info",
+    "asset": "172.20.0.3",
+    "matched": "http://172.20.0.3:51821",
+    "classification": {
+      "cve-id": null,
+      "cwe-id": [
+        "cwe-693"
+      ]
+    }
+  },
+  {
+    "template": "http-missing-security-headers",
+    "name": "HTTP Missing Security Headers",
+    "severity": "info",
+    "asset": "172.20.0.3",
+    "matched": "http://172.20.0.3:51821",
+    "classification": {
+      "cve-id": null,
+      "cwe-id": [
+        "cwe-693"
+      ]
+    }
+  },
+  {
+    "template": "http-missing-security-headers",
+    "name": "HTTP Missing Security Headers",
+    "severity": "info",
+    "asset": "172.20.0.3",
+    "matched": "http://172.20.0.3:51821",
+    "classification": {
+      "cve-id": null,
+      "cwe-id": [
+        "cwe-693"
+      ]
+    }
+  },
+  {
+    "template": "http-missing-security-headers",
+    "name": "HTTP Missing Security Headers",
+    "severity": "info",
+    "asset": "172.20.0.3",
+    "matched": "http://172.20.0.3:51821",
+    "classification": {
+      "cve-id": null,
+      "cwe-id": [
+        "cwe-693"
+      ]
+    }
+  },
+  {
+    "template": "http-missing-security-headers",
+    "name": "HTTP Missing Security Headers",
+    "severity": "info",
+    "asset": "172.20.0.3",
+    "matched": "http://172.20.0.3:51821",
+    "classification": {
+      "cve-id": null,
+      "cwe-id": [
+        "cwe-693"
+      ]
+    }
+  },
+  {
+    "template": "http-missing-security-headers",
+    "name": "HTTP Missing Security Headers",
+    "severity": "info",
+    "asset": "172.20.0.3",
+    "matched": "http://172.20.0.3:51821",
+    "classification": {
+      "cve-id": null,
+      "cwe-id": [
+        "cwe-693"
+      ]
+    }
+  },
+  {
+    "template": "http-missing-security-headers",
+    "name": "HTTP Missing Security Headers",
+    "severity": "info",
+    "asset": "172.20.0.3",
+    "matched": "http://172.20.0.3:51821",
+    "classification": {
+      "cve-id": null,
+      "cwe-id": [
+        "cwe-693"
+      ]
+    }
+  },
+  {
+    "template": "http-missing-security-headers",
+    "name": "HTTP Missing Security Headers",
+    "severity": "info",
+    "asset": "172.20.0.3",
+    "matched": "http://172.20.0.3:51821",
+    "classification": {
+      "cve-id": null,
+      "cwe-id": [
+        "cwe-693"
+      ]
+    }
+  },
+  {
+    "template": "http-missing-security-headers",
+    "name": "HTTP Missing Security Headers",
+    "severity": "info",
+    "asset": "172.20.0.7",
+    "matched": "http://172.20.0.7:631",
+    "classification": {
+      "cve-id": null,
+      "cwe-id": [
+        "cwe-693"
+      ]
+    }
+  },
+  {
+    "template": "http-missing-security-headers",
+    "name": "HTTP Missing Security Headers",
+    "severity": "info",
+    "asset": "172.20.0.7",
+    "matched": "http://172.20.0.7:631",
+    "classification": {
+      "cve-id": null,
+      "cwe-id": [
+        "cwe-693"
+      ]
+    }
+  },
+  {
+    "template": "http-missing-security-headers",
+    "name": "HTTP Missing Security Headers",
+    "severity": "info",
+    "asset": "172.20.0.7",
+    "matched": "http://172.20.0.7:631",
+    "classification": {
+      "cve-id": null,
+      "cwe-id": [
+        "cwe-693"
+      ]
+    }
+  },
+  {
+    "template": "http-missing-security-headers",
+    "name": "HTTP Missing Security Headers",
+    "severity": "info",
+    "asset": "172.20.0.7",
+    "matched": "http://172.20.0.7:631",
+    "classification": {
+      "cve-id": null,
+      "cwe-id": [
+        "cwe-693"
+      ]
+    }
+  },
+  {
+    "template": "http-missing-security-headers",
+    "name": "HTTP Missing Security Headers",
+    "severity": "info",
+    "asset": "172.20.0.7",
+    "matched": "http://172.20.0.7:631",
+    "classification": {
+      "cve-id": null,
+      "cwe-id": [
+        "cwe-693"
+      ]
+    }
+  },
+  {
+    "template": "http-missing-security-headers",
+    "name": "HTTP Missing Security Headers",
+    "severity": "info",
+    "asset": "172.20.0.7",
+    "matched": "http://172.20.0.7:631",
+    "classification": {
+      "cve-id": null,
+      "cwe-id": [
+        "cwe-693"
+      ]
+    }
+  },
+  {
+    "template": "http-missing-security-headers",
+    "name": "HTTP Missing Security Headers",
+    "severity": "info",
+    "asset": "172.20.0.7",
+    "matched": "http://172.20.0.7:631",
+    "classification": {
+      "cve-id": null,
+      "cwe-id": [
+        "cwe-693"
+      ]
+    }
+  },
+  {
+    "template": "http-missing-security-headers",
+    "name": "HTTP Missing Security Headers",
+    "severity": "info",
+    "asset": "172.20.0.7",
+    "matched": "http://172.20.0.7:631",
+    "classification": {
+      "cve-id": null,
+      "cwe-id": [
+        "cwe-693"
+      ]
+    }
+  }
+]

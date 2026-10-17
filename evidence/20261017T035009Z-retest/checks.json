@@ -1,0 +1,25 @@
+{
+  "run_id": "20261017T035009Z-retest",
+  "phase": "retest",
+  "timestamp": "2026-10-17T03:52:47.279045+00:00",
+  "scope": {
+    "directory": "172.20.0.5",
+    "fileserver": "172.20.0.7",
+    "printserver": "172.20.0.2",
+    "uptime": "172.20.0.4",
+    "wireguard": "172.20.0.3"
+  },
+  "controls": {
+    "smb_signing_required": false,
+    "ad_min_age": true,
+    "admin_tls": true
+  },
+  "observations": {
+    "guest_readable_shares": [],
+    "bob_finance_allowed": false,
+    "weak_or_default_credentials": [],
+    "wg_anonymous_protected_api_status": 500
+  },
+  "nuclei_matches": 20,
+  "inventory_hosts": 5
+}

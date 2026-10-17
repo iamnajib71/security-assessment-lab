@@ -1,0 +1,114 @@
+Starting Nmap 7.93 ( https://nmap.org ) at 2026-10-17 13:37 UTC
+Nmap scan report for 172.20.0.5
+Host is up (0.000094s latency).
+Not shown: 987 closed tcp ports (conn-refused)
+PORT      STATE SERVICE      VERSION
+53/tcp    open  domain       (generic dns response: NOTIMP)
+| dns-nsid: 
+|_  id.server: mel01
+88/tcp    open  kerberos-sec (server time: 2026-10-17 13:38:42Z)
+135/tcp   open  msrpc        Microsoft Windows RPC
+139/tcp   open  netbios-ssn  Samba smbd 4.6.2
+389/tcp   open  ldap         (Anonymous bind OK)
+| ssl-cert: Subject: commonName=DC1.itops.lab/organizationName=Samba Administration
+| Not valid before: 2026-10-06T04:54:18
+|_Not valid after:  2028-09-05T04:54:18
+|_ssl-date: TLS randomness does not represent time
+445/tcp   open  netbios-ssn  Samba smbd 4.6.2
+464/tcp   open  kpasswd5?
+636/tcp   open  ssl/ldap     (Anonymous bind OK)
+| ssl-cert: Subject: commonName=DC1.itops.lab/organizationName=Samba Administration
+| Not valid before: 2026-10-06T04:54:18
+|_Not valid after:  2028-09-05T04:54:18
+|_ssl-date: TLS randomness does not represent time
+3268/tcp  open  ldap         (Anonymous bind OK)
+| ssl-cert: Subject: commonName=DC1.itops.lab/organizationName=Samba Administration
+| Not valid before: 2026-10-06T04:54:18
+|_Not valid after:  2028-09-05T04:54:18
+|_ssl-date: TLS randomness does not represent time
+3269/tcp  open  ssl/ldap     (Anonymous bind OK)
+| ssl-cert: Subject: commonName=DC1.itops.lab/organizationName=Samba Administration
+| Not valid before: 2026-10-06T04:54:18
+|_Not valid after:  2028-09-05T04:54:18
+|_ssl-date: TLS randomness does not represent time
+49152/tcp open  unknown
+49153/tcp open  unknown
+49154/tcp open  unknown
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   311: 
+|_    Message signing enabled and required
+|_nbstat: NetBIOS name: DC1, NetBIOS user: <unknown>, NetBIOS MAC: 90ddfe58d875 (unknown)
+| smb2-time: 
+|   date: 2026-10-17T13:39:08
+|_  start_date: N/A
+
+Nmap scan report for 172.20.0.7
+Host is up (0.000076s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT    STATE SERVICE     VERSION
+139/tcp open  netbios-ssn Samba smbd 4.6.2
+445/tcp open  netbios-ssn Samba smbd 4.6.2
+
+Host script results:
+| smb2-time: 
+|   date: 2026-10-17T13:39:08
+|_  start_date: N/A
+| smb2-security-mode: 
+|   311: 
+|_    Message signing enabled and required
+
+Nmap scan report for 172.20.0.2
+Host is up (0.000099s latency).
+Not shown: 999 closed tcp ports (conn-refused)
+PORT    STATE SERVICE VERSION
+631/tcp open  ipp     CUPS 2.4
+| http-robots.txt: 1 disallowed entry 
+|_/
+|_http-title: Home - CUPS 2.4.18
+
+Nmap scan report for 172.20.0.4
+Host is up (0.000086s latency).
+Not shown: 999 closed tcp ports (conn-refused)
+PORT     STATE SERVICE VERSION
+3001/tcp open  nessus?
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.1 302 Found
+|     X-Frame-Options: SAMEORIGIN
+|     Location: /dashboard
+|     Vary: Accept
+|     Content-Type: text/plain; charset=utf-8
+|     Content-Length: 32
+|     Date: Sat, 17 Oct 2026 13:38:47 GMT
+|     Connection: close
+|     Found. Redirecting to /dashboard
+|   NCP, SSLSessionReq, TLSSessionReq: 
+|     HTTP/1.1 400 Bad Request
+|_    Connection: close
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port3001-TCP:V=7.93%I=2%D=10/17%Time=6AD37A62%P=x86_64-pc-linux-gnu%r(N
+SF:CP,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r
+SF:\n")%r(GetRequest,EC,"HTTP/1\.1\x20302\x20Found\r\nX-Frame-Options:\x20
+SF:SAMEORIGIN\r\nLocation:\x20/dashboard\r\nVary:\x20Accept\r\nContent-Typ
+SF:e:\x20text/plain;\x20charset=utf-8\r\nContent-Length:\x2032\r\nDate:\x2
+SF:0Sat,\x2017\x20Oct\x202026\x2013:38:47\x20GMT\r\nConnection:\x20close\r
+SF:\n\r\nFound\.\x20Redirecting\x20to\x20/dashboard")%r(SSLSessionReq,2F,"
+SF:HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n")%r(
+SF:TLSSessionReq,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20
+SF:close\r\n\r\n");
+
+Nmap scan report for 172.20.0.3
+Host is up (0.000084s latency).
+All 1000 scanned ports on 172.20.0.3 are in ignored states.
+Not shown: 1000 closed tcp ports (conn-refused)
+
+Post-scan script results:
+| clock-skew: 
+|   0s: 
+|     172.20.0.5
+|_    172.20.0.7
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 5 IP addresses (5 hosts up) scanned in 129.20 seconds

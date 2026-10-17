@@ -1,0 +1,7 @@
+Temporary fictional assessment_probe created with random strong password
+SELF_CHANGE_RC=0
+Changed password OK
+SELF_CHANGE_RC=0
+Changed password OK
+RAPID_CHANGES_ALLOWED=true
+Deleted user assessment_probe

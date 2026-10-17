@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.93 scan initiated Sat Oct 17 13:37:29 2026 as: nmap -n -sn -oA /evidence/discovery 172.20.0.5 172.20.0.7 172.20.0.2 172.20.0.4 172.20.0.3 -->
+<nmaprun scanner="nmap" args="nmap -n -sn -oA /evidence/discovery 172.20.0.5 172.20.0.7 172.20.0.2 172.20.0.4 172.20.0.3" start="1792244249" startstr="Sat Oct 17 13:37:29 2026" version="7.93" xmloutputversion="1.05">
+<verbose level="0"/>
+<debugging level="0"/>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.20.0.5" addrtype="ipv4"/>
+<address addr="72:33:12:7A:E2:3D" addrtype="mac"/>
+<hostnames>
+</hostnames>
+<times srtt="8" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.20.0.7" addrtype="ipv4"/>
+<address addr="82:16:91:EE:AC:D1" addrtype="mac"/>
+<hostnames>
+</hostnames>
+<times srtt="8" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.20.0.2" addrtype="ipv4"/>
+<address addr="0A:A2:B2:B6:7C:D5" addrtype="mac"/>
+<hostnames>
+</hostnames>
+<times srtt="9" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.20.0.4" addrtype="ipv4"/>
+<address addr="4A:57:DF:9D:B0:7C" addrtype="mac"/>
+<hostnames>
+</hostnames>
+<times srtt="9" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.20.0.3" addrtype="ipv4"/>
+<address addr="72:21:C5:93:52:D9" addrtype="mac"/>
+<hostnames>
+</hostnames>
+<times srtt="45" rttvar="5000" to="100000"/>
+</host>
+<runstats><finished time="1792244249" timestr="Sat Oct 17 13:37:29 2026" summary="Nmap done at Sat Oct 17 13:37:29 2026; 5 IP addresses (5 hosts up) scanned in 0.09 seconds" elapsed="0.09" exit="success"/><hosts up="5" down="0" total="5"/>
+</runstats>
+</nmaprun>

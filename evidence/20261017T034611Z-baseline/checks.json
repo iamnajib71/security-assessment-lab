@@ -1,0 +1,19 @@
+{
+  "run_id": "20261017T034611Z-baseline",
+  "phase": "baseline",
+  "timestamp": "2026-10-17T03:48:47.053431+00:00",
+  "scope": {
+    "directory": "172.20.0.5",
+    "fileserver": "172.20.0.2",
+    "printserver": "172.20.0.7",
+    "uptime": "172.20.0.4",
+    "wireguard": "172.20.0.3"
+  },
+  "controls": {
+    "smb_signing_required": false,
+    "ad_min_age": false,
+    "admin_tls": false
+  },
+  "nuclei_matches": 20,
+  "inventory_hosts": 5
+}

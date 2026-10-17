@@ -1,0 +1,8 @@
+.git
+.env*
+evidence
+private
+tmp
+report
+docs
+__pycache__

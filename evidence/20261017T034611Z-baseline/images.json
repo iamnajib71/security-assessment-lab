@@ -1,0 +1,32 @@
+[
+  {
+    "service": "directory",
+    "image": "it-support-homelab-directory:bookworm",
+    "image_id": "sha256:18ef5c957a75a66f904ff3e982540e448098c859fa3b2ba6df9b14883b7a1168"
+  },
+  {
+    "service": "fileserver",
+    "image": "dperson/samba:latest",
+    "image_id": "sha256:66088b78a19810dd1457a8f39340e95e663c728083efa5fe7dc0d40b2478e869"
+  },
+  {
+    "service": "homepage",
+    "image": "ghcr.io/gethomepage/homepage:latest",
+    "image_id": "sha256:643bd0be730d40f69d58028a55d1a896739333e8815786df42bc97f109ecbe61"
+  },
+  {
+    "service": "printserver",
+    "image": "olbat/cupsd:latest",
+    "image_id": "sha256:3a9d7c319f4153c87e16db4edb6ef6c317aa7e71f8abe65c3419cc9aca851194"
+  },
+  {
+    "service": "uptime",
+    "image": "louislam/uptime-kuma:1",
+    "image_id": "sha256:70233f4acb5163fd2a59a49909cf01e44415cecff13dba69e3a86647a2919f83"
+  },
+  {
+    "service": "wireguard",
+    "image": "ghcr.io/wg-easy/wg-easy:14",
+    "image_id": "sha256:5f26407fd2ede54df76d63304ef184576a6c1bb73f934a58a11abdd852fab549"
+  }
+]

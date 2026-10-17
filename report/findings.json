@@ -1,0 +1,55 @@
+{
+  "summary": "3 confirmed findings: 1 Medium, 2 Low, 0 High, 0 Critical. 3 fixed and retested; 0 open or unverified. 5 service hosts inventoried. The latest unauthenticated Nuclei pass produced 20 informational template matches; these are observations, not automatically confirmed vulnerabilities.",
+  "findings": [
+    {
+      "id": "SAL-01",
+      "asset": "fileserver / SMB 445",
+      "severity": "Medium",
+      "title": "SMB signing is optional",
+      "control": "smb_signing_required",
+      "risk": "A malicious peer on office-lan could tamper with unsigned SMB sessions or participate in relay attacks. Requires access to this local lab network; no internet exposure was observed.",
+      "remediation": "Set server signing = mandatory in the persistent fileserver Compose command; recreate the service and require signed client sessions.",
+      "verification": "Compare the baseline Nmap smb2-security-mode (enabled but not required) with a direct SMB2 NEGOTIATE response on host loopback 1445 and the retest Nmap output (required). Confirm alice can still list Finance with signing required. In this Samba client, signing=disabled remains a preference and does not force an unsigned session when the server requires signing; its exit code is not a closure criterion.",
+      "rating": "CVSS-style qualitative Medium: adjacent-network prerequisite, potential confidentiality/integrity impact. No exploit chain or numeric CVSS score asserted.",
+      "status": "Fixed - retested",
+      "evidence": [
+        "../evidence/20261017T034611Z-baseline/checks.json",
+        "../evidence/20261017T133728Z-retest/checks.json"
+      ]
+    },
+    {
+      "id": "SAL-02",
+      "asset": "directory / ITOPS.LAB",
+      "severity": "Low",
+      "title": "Zero minimum password age permits rapid password changes",
+      "control": "ad_min_age",
+      "risk": "An authenticated fictional user can change passwords repeatedly, reducing the value of the 12-password history. No weak password or completed history bypass is claimed.",
+      "remediation": "Set minimum password age to one day in seed.sh and the running directory; preserve administrative password-reset workflows.",
+      "verification": "Create one temporary fictional assessment_probe account with random strong passwords. Perform two self-service changes, then remove the account in finally. Retest must reject an immediate self-service change.",
+      "rating": "CVSS-style qualitative Low: requires a valid local domain account; policy weakness without demonstrated compromise.",
+      "status": "Fixed - retested",
+      "evidence": [
+        "../evidence/20261017T034611Z-baseline/checks.json",
+        "../evidence/20261017T133728Z-retest/checks.json"
+      ]
+    },
+    {
+      "id": "SAL-03",
+      "asset": "wg-easy, Uptime Kuma, CUPS / host loopback",
+      "severity": "Low",
+      "title": "Administration uses plaintext HTTP",
+      "control": "admin_tls",
+      "risk": "Admin sessions and CUPS Basic credentials lack transport encryption on the host-facing HTTP listeners. Loopback binding substantially reduces exposure; privileged host compromise is outside this proof.",
+      "remediation": "Terminate TLS with a local Caddy CA on the same loopback admin ports and remove direct HTTP host publications. Trust the exported public CA explicitly. Internal office-lan HTTP remains a documented residual risk.",
+      "verification": "Make credential-free HTTP requests to all three original ports before remediation, then verify HTTP no longer serves the application and HTTPS validates against the exported lab CA.",
+      "rating": "CVSS-style qualitative Low in this loopback-only deployment. Three endpoints are grouped under one root cause; not three inflated findings.",
+      "status": "Fixed - retested",
+      "evidence": [
+        "../evidence/20261017T034611Z-baseline/checks.json",
+        "../evidence/20261017T133728Z-retest/checks.json"
+      ]
+    }
+  ],
+  "baseline": "20261017T034611Z-baseline",
+  "current": "20261017T133728Z-retest"
+}

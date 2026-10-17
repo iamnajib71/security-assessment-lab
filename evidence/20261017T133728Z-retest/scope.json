@@ -1,0 +1,7 @@
+{
+  "directory": "172.20.0.5",
+  "fileserver": "172.20.0.7",
+  "printserver": "172.20.0.2",
+  "uptime": "172.20.0.4",
+  "wireguard": "172.20.0.3"
+}

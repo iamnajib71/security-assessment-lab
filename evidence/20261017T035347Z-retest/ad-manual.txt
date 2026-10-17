@@ -1,0 +1,5 @@
+Temporary fictional assessment_probe created with random strong password
+SELF_CHANGE_RC=255
+ERROR: Failed to change password : (-1073741716, "samr_ChangePasswordUser4 for '\\\\DC1.ITOPS.LAB\\assessment_probe' failed: NT_STATUS_PASSWORD_RESTRICTION")
+RAPID_CHANGES_ALLOWED=false
+Deleted user assessment_probe

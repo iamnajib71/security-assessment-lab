@@ -1,0 +1,3 @@
+<?xml version="1.0"?>
+<!-- SYNTHETIC PARSER FIXTURE. Never used as live evidence. -->
+<nmaprun><host><status state="up"/><address addr="172.20.0.3" addrtype="ipv4"/><ports><port protocol="tcp" portid="445"><state state="open"/><service name="microsoft-ds" product="Samba smbd" version="4.x"/><script id="smb2-security-mode" output="Message signing enabled but not required"/></port><port protocol="tcp" portid="22"><state state="closed"/></port></ports></host></nmaprun>

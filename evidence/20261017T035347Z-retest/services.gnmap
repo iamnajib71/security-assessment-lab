@@ -1,0 +1,12 @@
+# Nmap 7.93 scan initiated Sat Oct 17 03:53:48 2026 as: nmap -n -sT -Pn -sV --version-light --top-ports 1000 --script "(default and safe) and not (external or broadcast or intrusive or dos or exploit or brute or fuzzer)" --script-timeout 15s --host-timeout 240s --max-rate 75 -oA /evidence/services 172.20.0.5 172.20.0.7 172.20.0.2 172.20.0.4 172.20.0.3
+Host: 172.20.0.5 ()	Status: Up
+Host: 172.20.0.5 ()	Ports: 53/open/tcp//domain//(generic dns response: NOTIMP)/, 88/open/tcp//kerberos-sec//(server time: 2026-10-17 03:55:01Z)/, 135/open/tcp//msrpc//Microsoft Windows RPC/, 139/open/tcp//netbios-ssn//Samba smbd 4.6.2/, 389/open/tcp//ldap//(Anonymous bind OK)/, 445/open/tcp//netbios-ssn//Samba smbd 4.6.2/, 464/open/tcp//kpasswd5?///, 636/open/tcp//ssl|ldap//(Anonymous bind OK)/, 3268/open/tcp//ldap//(Anonymous bind OK)/, 3269/open/tcp//ssl|ldap//(Anonymous bind OK)/, 49152/open/tcp//unknown///, 49153/open/tcp//unknown///, 49154/open/tcp//unknown///	Ignored State: closed (987)
+Host: 172.20.0.7 ()	Status: Up
+Host: 172.20.0.7 ()	Ports: 139/open/tcp//netbios-ssn//Samba smbd 4.6.2/, 445/open/tcp//netbios-ssn//Samba smbd 4.6.2/	Ignored State: closed (998)
+Host: 172.20.0.2 ()	Status: Up
+Host: 172.20.0.2 ()	Ports: 631/open/tcp//ipp//CUPS 2.4/	Ignored State: closed (999)
+Host: 172.20.0.4 ()	Status: Up
+Host: 172.20.0.4 ()	Ports: 3001/open/tcp//nessus?///	Ignored State: closed (999)
+Host: 172.20.0.3 ()	Status: Up
+Host: 172.20.0.3 ()	Ports: 	Ignored State: closed (1000)
+# Nmap done at Sat Oct 17 03:55:58 2026 -- 5 IP addresses (5 hosts up) scanned in 129.62 seconds

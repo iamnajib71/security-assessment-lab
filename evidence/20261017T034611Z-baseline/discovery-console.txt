@@ -1,0 +1,17 @@
+Starting Nmap 7.93 ( https://nmap.org ) at 2026-10-17 03:46 UTC
+Nmap scan report for 172.20.0.5
+Host is up (0.0000090s latency).
+MAC Address: 72:33:12:7A:E2:3D (Unknown)
+Nmap scan report for 172.20.0.2
+Host is up (0.0000070s latency).
+MAC Address: 3A:19:C5:00:5A:DB (Unknown)
+Nmap scan report for 172.20.0.7
+Host is up (0.0000080s latency).
+MAC Address: 3A:E6:91:4D:65:A3 (Unknown)
+Nmap scan report for 172.20.0.4
+Host is up (0.0000090s latency).
+MAC Address: C2:D6:E5:3A:02:4C (Unknown)
+Nmap scan report for 172.20.0.3
+Host is up (0.000044s latency).
+MAC Address: DE:D5:E9:CD:45:85 (Unknown)
+Nmap done: 5 IP addresses (5 hosts up) scanned in 0.09 seconds

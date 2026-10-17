@@ -1,0 +1,354 @@
+diff --git a/README.md b/README.md
+index 005df76..9096fbc 100644
+--- a/README.md
++++ b/README.md
+@@ -46,9 +46,9 @@ flowchart LR
+ | Page | Local URL | What it shows |
+ |---|---|---|
+ | Office dashboard | http://127.0.0.1:13002 | Every service at a glance (screenshot above) |
+-| Status page | http://127.0.0.1:13001/status/office | Uptime history for each service |
+-| VPN admin | http://127.0.0.1:51821 | Devices, profiles and QR codes; create or revoke a device |
+-| Print server | http://127.0.0.1:6631/printers/ | Queues, jobs and printer administration |
++| Status page | https://127.0.0.1:13001/status/office | Uptime history for each service |
++| VPN admin | https://127.0.0.1:51821 | Devices, profiles and QR codes; create or revoke a device |
++| Print server | https://127.0.0.1:6631/printers/ | Queues, jobs and printer administration |
+ 
+ <img src="docs/img/status-page.png" width="49%" alt="Uptime Kuma status page with all office services operational"> <img src="docs/img/print-queues.png" width="49%" alt="CUPS printers page showing Office-PDF and Office-Laser queues">
+ 
+@@ -92,3 +92,8 @@ Latest run (6 October 2026): homelab checks **0 failures**, AD tasks **0 failure
+ that answers tickets about this same office using the same user guides.
+ 
+ Built by Nazmul Hassan: [LinkedIn](https://www.linkedin.com/in/iamnajib71) · [GitHub](https://github.com/iamnajib71)
++
++
++## Security assessment hardening
++
++Owner-authorized assessment on 17 October 2026: mandatory SMB signing, AD minimum password age one day, and local TLS on admin ports 51821, 13001 and 6631. Use the explicit public CA at `homelab/tls/lab-root.crt` (`curl --cacert`); the private key stays in the Caddy data volume. Internal office-lan monitoring still uses HTTP. The companion security-assessment-lab repository contains before/after evidence and the report.
+diff --git a/docker-compose.yml b/docker-compose.yml
+index 440cc21..da419e0 100644
+--- a/docker-compose.yml
++++ b/docker-compose.yml
+@@ -20,7 +20,7 @@ services:
+       PASSWORD_HASH: ${WG_PASSWORD_HASH}
+       WG_DEFAULT_DNS: 1.1.1.1
+       WG_ALLOWED_IPS: 10.8.0.0/24, 172.20.0.0/16
+-    ports: ["127.0.0.1:51820:51820/udp", "127.0.0.1:51821:51821/tcp"]
++    ports: ["127.0.0.1:51820:51820/udp"]
+     cap_add: [NET_ADMIN, SYS_MODULE]
+     sysctls:
+       net.ipv4.ip_forward: "1"
+@@ -40,6 +40,7 @@ services:
+       -s "Public;/shares/public;yes;no;no;@staff,@finance;none;;Company-wide read/write"
+       -s "Finance;/shares/finance;yes;no;no;@finance;none;;Finance team only"
+       -s "Scans;/shares/scans;yes;no;no;@staff,@finance;none;;Scanner drop folder"
++      -g "server signing = mandatory"
+       -p
+     volumes:
+       - smb_public:/shares/public
+@@ -50,7 +51,6 @@ services:
+   printserver:
+     image: olbat/cupsd:latest
+     restart: unless-stopped
+-    ports: ["127.0.0.1:6631:631"]
+     environment:
+       CUPS_ADMIN_PASSWORD: ${CUPS_ADMIN_PASSWORD}
+     entrypoint: ["/bin/sh", "/lab-entrypoint.sh"]
+@@ -67,7 +67,6 @@ services:
+   uptime:
+     image: louislam/uptime-kuma:1
+     restart: unless-stopped
+-    ports: ["127.0.0.1:13001:3001"]
+     volumes:
+       - kuma_data:/app/data
+       - ./homelab/uptime:/lab:ro
+@@ -106,7 +105,19 @@ services:
+       retries: 20
+       start_period: 30s
+ 
++  admin-tls:
++    image: caddy:2.11.7-alpine
++    restart: unless-stopped
++    ports: ["127.0.0.1:51821:51821", "127.0.0.1:13001:13001", "127.0.0.1:6631:6631"]
++    volumes:
++      - ./homelab/tls/Caddyfile:/etc/caddy/Caddyfile:ro
++      - admin_tls_data:/data
++      - admin_tls_config:/config
++    depends_on: [wireguard, uptime, printserver]
++
+ volumes:
++  admin_tls_data:
++  admin_tls_config:
+   wg_data:
+   smb_public:
+   smb_finance:
+diff --git a/docs/homelab-runbook.md b/docs/homelab-runbook.md
+index 4ff1779..3fe530f 100644
+--- a/docs/homelab-runbook.md
++++ b/docs/homelab-runbook.md
+@@ -39,10 +39,10 @@ flowchart LR
+ 
+ | Service / purpose | Host → container | Administration |
+ |---|---|---|
+-| WireGuard / VPN | UDP 51820 → 51820; TCP 51821 → 51821 | http://127.0.0.1:51821; `WG_ADMIN_PASSWORD` |
++| WireGuard / VPN | UDP 51820 → 51820; TCP 51821 → 51821 | https://127.0.0.1:51821; `WG_ADMIN_PASSWORD` |
+ | Samba / staff files | TCP 1445 → 445 | `docker compose exec fileserver sh`; Public/Scans: staff and finance; Finance: `@finance` |
+-| CUPS / printing | TCP 6631 → 631 | http://127.0.0.1:6631; `print` / `CUPS_ADMIN_PASSWORD` |
+-| Uptime Kuma / availability | TCP 13001 → 3001 | http://127.0.0.1:13001; `admin` / `KUMA_ADMIN_PASSWORD` (created by setup-kuma.js) |
++| CUPS / printing | TCP 6631 → 631 | https://127.0.0.1:6631; `print` / `CUPS_ADMIN_PASSWORD` |
++| Uptime Kuma / availability | TCP 13001 → 3001 | https://127.0.0.1:13001; `admin` / `KUMA_ADMIN_PASSWORD` (created by setup-kuma.js) |
+ | Homepage / office dashboard | TCP 13002 → 3000 | http://127.0.0.1:13002; config in `homelab/dashboard/` |
+ | Samba 4 AD / directory | TCP 1389 → 389; 1636 → 636 | `docker compose exec directory samba-tool`; Administrator / `AD_ADMIN_PASSWORD` |
+ 
+@@ -132,7 +132,7 @@ docker compose exec -T -e KUMA_PASSWORD=<KUMA_ADMIN_PASSWORD> uptime node /lab/s
+ | Active Directory | TCP directory:389 and directory:88 (Kerberos) |
+ | Office dashboard | HTTP http://homepage:3000 |
+ 
+-Status page: http://127.0.0.1:13001/status/office. Sign in to Kuma as `admin` with KUMA_ADMIN_PASSWORD. To add a monitor by hand:
++Status page: https://127.0.0.1:13001/status/office. Sign in to Kuma as `admin` with KUMA_ADMIN_PASSWORD. To add a monitor by hand:
+ **Add New Monitor**, HTTP(s) or TCP Port, 60-second interval, then add it to the status page. Configure notifications only to an
+ approved destination.
+ 
+@@ -160,3 +160,8 @@ domain join, RSAT, MFA, production hardening or physical printing.
+ References: [CUPS access rules](https://www.cups.org/doc/man-cupsd.conf.html),
+ [Samba administration](https://www.samba.org/samba/docs/current/man-html/samba-tool.8.html),
+ [wg-easy v14 API](https://github.com/wg-easy/wg-easy/blob/v14/src/lib/Server.js).
++
++
++## Security assessment hardening
++
++Owner-authorized assessment on 17 October 2026: mandatory SMB signing, AD minimum password age one day, and local TLS on admin ports 51821, 13001 and 6631. Use the explicit public CA at `homelab/tls/lab-root.crt` (`curl --cacert`); the private key stays in the Caddy data volume. Internal office-lan monitoring still uses HTTP. The companion security-assessment-lab repository contains before/after evidence and the report.
+diff --git a/homelab/ad/seed.sh b/homelab/ad/seed.sh
+index 046d1ab..2e05eb1 100644
+--- a/homelab/ad/seed.sh
++++ b/homelab/ad/seed.sh
+@@ -29,6 +29,6 @@ for user in alice bob carol; do add_member GG-Staff "$user"; done
+ add_member GG-Finance alice
+ add_member GG-IT-Admins carol
+ samba-tool domain passwordsettings set --complexity=on --history-length=12 \
+-  --min-pwd-length=12 --min-pwd-age=0 --max-pwd-age=90 \
++  --min-pwd-length=12 --min-pwd-age=1 --max-pwd-age=90 \
+   --account-lockout-threshold=5 --account-lockout-duration=15 \
+   --reset-account-lockout-after=15
+diff --git a/homelab/dashboard/services.yaml b/homelab/dashboard/services.yaml
+index 6772c9c..72187e0 100644
+--- a/homelab/dashboard/services.yaml
++++ b/homelab/dashboard/services.yaml
+@@ -1,7 +1,7 @@
+ - Office network:
+     - VPN (WireGuard):
+         icon: wireguard.png
+-        href: http://127.0.0.1:51821
++        href: https://127.0.0.1:51821
+         description: Remote access for staff laptops, one profile per device
+         siteMonitor: http://wireguard:51821
+         widget:
+@@ -14,7 +14,7 @@
+         ping: fileserver
+     - Print server (CUPS):
+         icon: mdi-printer
+-        href: http://127.0.0.1:6631/printers/
++        href: https://127.0.0.1:6631/printers/
+         description: Office-PDF (prints to Scans) and Office-Laser queues
+         siteMonitor: http://printserver:631/printers/
+ 
+@@ -25,7 +25,7 @@
+         ping: directory
+     - Uptime Kuma:
+         icon: uptime-kuma.png
+-        href: http://127.0.0.1:13001/status/office
++        href: https://127.0.0.1:13001/status/office
+         description: Availability history and public status page
+         siteMonitor: http://uptime:3001
+         widget:
+diff --git a/tests/homelab_check.ps1 b/tests/homelab_check.ps1
+index 6ea9a6c..d6641ab 100644
+--- a/tests/homelab_check.ps1
++++ b/tests/homelab_check.ps1
+@@ -1,4 +1,4 @@
+-#Requires -Version 5.1
++﻿#Requires -Version 5.1
+ $ErrorActionPreference = 'Stop'
+ . (Join-Path $PSScriptRoot 'lab_helpers.ps1')
+ Push-Location $script:LabRoot
+@@ -25,45 +25,45 @@ try {
+     }
+     Test-LabStep 'CUPS public views and authenticated administration' {
+         foreach ($path in @('/','/jobs','/printers')) {
+-            $response = Invoke-WebRequest -UseBasicParsing -Uri ('http://127.0.0.1:6631' + $path) -TimeoutSec 15
++            $response = Invoke-LabWebRequest -UseBasicParsing -Uri ('https://127.0.0.1:6631' + $path) -TimeoutSec 15
+             Assert-Lab ($response.StatusCode -eq 200) "CUPS $path failed"
+             Write-Evidence ("GET $path => HTTP 200")
+         }
+         $status = 0
+-        try { $null = Invoke-WebRequest -UseBasicParsing -Uri 'http://127.0.0.1:6631/admin/' -TimeoutSec 15 }
+-        catch { if ($_.Exception.Response) { $status = [int]$_.Exception.Response.StatusCode } else { throw } }
++        $status = (Invoke-LabWebRequest -Uri 'https://127.0.0.1:6631/admin/' -AllowError).StatusCode
+         Assert-Lab ($status -eq 401) "Anonymous /admin returned $status"
+         Write-Evidence 'GET /admin/ without credentials => HTTP 401'
+         $token = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes('print:' + $script:LabEnv['CUPS_ADMIN_PASSWORD']))
+-        $response = Invoke-WebRequest -UseBasicParsing -Uri 'http://127.0.0.1:6631/admin/' -Headers @{Authorization = ('Basic ' + $token)} -TimeoutSec 15
++        $response = Invoke-LabWebRequest -UseBasicParsing -Uri 'https://127.0.0.1:6631/admin/' -Headers @{Authorization = ('Basic ' + $token)} -TimeoutSec 15
+         Assert-Lab ($response.StatusCode -eq 200) 'Admin login failed'
+         Write-Evidence 'GET /admin/ as print => HTTP 200'
+     }
+     Test-LabStep 'WireGuard UI and peer create/list/delete' {
+-        $response = Invoke-WebRequest -UseBasicParsing -Uri 'http://127.0.0.1:51821' -TimeoutSec 15
++        $response = Invoke-LabWebRequest -UseBasicParsing -Uri 'https://127.0.0.1:51821' -TimeoutSec 15
+         Assert-Lab ($response.StatusCode -eq 200) 'UI failed'
+         $session = Open-WgSession
+         $name = 'check-' + [Guid]::NewGuid().ToString('N').Substring(0,12)
+         try {
+-            $null = Invoke-RestMethod -Uri 'http://127.0.0.1:51821/api/wireguard/client' -Method Post -ContentType 'application/json' -Body (@{name=$name}|ConvertTo-Json) -WebSession $session
++            $null = Invoke-LabRestMethod -Uri 'https://127.0.0.1:51821/api/wireguard/client' -Method Post -ContentType 'application/json' -Body (@{name=$name}|ConvertTo-Json) -WebSession $session
+             $peer = Get-WgClients $session | Where-Object { $_.name -eq $name }
+             Assert-Lab ($null -ne $peer) 'New peer absent'
+             Write-Evidence ("POST /api/session => success; peer listed: " + $peer.name + ' ' + $peer.address)
+         } finally {
+             foreach ($item in @(Get-WgClients $session | Where-Object { $_.name -eq $name })) {
+-                $null = Invoke-RestMethod -Uri ('http://127.0.0.1:51821/api/wireguard/client/' + $item.id) -Method Delete -WebSession $session
++                $null = Invoke-LabRestMethod -Uri ('https://127.0.0.1:51821/api/wireguard/client/' + $item.id) -Method Delete -WebSession $session
+             }
+         }
+         Assert-Lab (@(Get-WgClients $session | Where-Object {$_.name -eq $name}).Count -eq 0) 'Peer still present'
+         Write-Evidence 'DELETE peer => success; absent on subsequent GET'
++        Remove-Item -LiteralPath $session.CookieJar -Force -ErrorAction SilentlyContinue
+     }
+     Test-LabStep 'Uptime Kuma HTTP response' {
+-        $response = Invoke-WebRequest -UseBasicParsing -Uri 'http://127.0.0.1:13001' -TimeoutSec 15
++        $response = Invoke-LabWebRequest -UseBasicParsing -Uri 'https://127.0.0.1:13001' -TimeoutSec 15
+         Assert-Lab ($response.StatusCode -eq 200) 'Uptime Kuma failed'
+-        Write-Evidence 'GET http://127.0.0.1:13001 => HTTP 200'
++        Write-Evidence 'GET https://127.0.0.1:13001 => HTTP 200'
+     }
+     Test-LabStep 'Uptime Kuma status page: every office monitor UP' {
+-        $beats = (Invoke-WebRequest -UseBasicParsing -Uri 'http://127.0.0.1:13001/api/status-page/heartbeat/office' -TimeoutSec 15).Content | ConvertFrom-Json
++        $beats = (Invoke-LabWebRequest -UseBasicParsing -Uri 'https://127.0.0.1:13001/api/status-page/heartbeat/office' -TimeoutSec 15).Content | ConvertFrom-Json
+         $ids = @($beats.heartbeatList.PSObject.Properties.Name)
+         Assert-Lab ($ids.Count -ge 6) "Expected at least 6 monitors, found $($ids.Count); run homelab/uptime/setup-kuma.js"
+         foreach ($id in $ids) {
+@@ -73,7 +73,7 @@ try {
+         Write-Evidence ("GET /api/status-page/heartbeat/office => " + $ids.Count + ' monitors, all UP')
+     }
+     Test-LabStep 'Office dashboard (Homepage) responds' {
+-        $response = Invoke-WebRequest -UseBasicParsing -Uri 'http://127.0.0.1:13002' -TimeoutSec 20
++        $response = Invoke-LabWebRequest -UseBasicParsing -Uri 'http://127.0.0.1:13002' -TimeoutSec 20
+         Assert-Lab ($response.StatusCode -eq 200) 'Dashboard failed'
+         Write-Evidence 'GET http://127.0.0.1:13002 => HTTP 200'
+     }
+diff --git a/tests/lab_helpers.ps1 b/tests/lab_helpers.ps1
+index 1b9cec0..9d200d0 100644
+--- a/tests/lab_helpers.ps1
++++ b/tests/lab_helpers.ps1
+@@ -1,4 +1,4 @@
+-# PowerShell 5.1. Evidence captures redacted check output, never raw sessions.
++﻿# PowerShell 5.1. Evidence captures redacted check output, never raw sessions.
+ $script:LabRoot = Split-Path $PSScriptRoot -Parent
+ $script:LabEnv = @{}
+ Get-Content -LiteralPath (Join-Path $script:LabRoot '.env') | ForEach-Object {
+@@ -54,11 +54,29 @@ function Assert-Lab([bool]$Condition, [string]$Message) {
+     if (-not $Condition) { throw $Message }
+ }
+ function Open-WgSession {
+-    $session = New-Object Microsoft.PowerShell.Commands.WebRequestSession
++    $session = [PSCustomObject]@{CookieJar=(Join-Path ([IO.Path]::GetTempPath()) ('homelab-wg-' + [Guid]::NewGuid().ToString('N') + '.txt'))}
+     $body = @{ password = $script:LabEnv['WG_ADMIN_PASSWORD'] } | ConvertTo-Json -Compress
+-    $null = Invoke-RestMethod -Uri 'http://127.0.0.1:51821/api/session' -Method Post -ContentType 'application/json' -Body $body -WebSession $session
++    $null = Invoke-LabRestMethod -Uri 'https://127.0.0.1:51821/api/session' -Method Post -ContentType 'application/json' -Body $body -WebSession $session
+     return $session
+ }
+ function Get-WgClients($Session) {
+-    Invoke-RestMethod -Uri 'http://127.0.0.1:51821/api/wireguard/client' -WebSession $Session | ForEach-Object { foreach ($client in $_) { $client } }
++    Invoke-LabRestMethod -Uri 'https://127.0.0.1:51821/api/wireguard/client' -WebSession $Session | ForEach-Object { foreach ($client in $_) { $client } }
++}
++
++# TLS adapter: explicit lab CA validation without global certificate bypasses.
++function Invoke-LabWebRequest {
++    param([string]$Uri, [string]$Method='GET', [string]$Body, [string]$ContentType, $Headers, $WebSession, [switch]$UseBasicParsing, [int]$TimeoutSec=30, [switch]$AllowError)
++    $r = @{url=$Uri; method=$Method; body=$Body; content_type=$ContentType; headers=$Headers; cookie_jar=$null}
++    if ($WebSession) { $r.cookie_jar = $WebSession.CookieJar }
++    $inputJson = $r | ConvertTo-Json -Depth 5 -Compress
++    $raw = $inputJson | & python (Join-Path $PSScriptRoot 'tls_http.py')
++    if ($LASTEXITCODE -ne 0) { throw 'TLS request failed; no insecure fallback is allowed' }
++    $response = $raw | ConvertFrom-Json
++    if (-not $AllowError -and $response.StatusCode -ge 400) { throw ('HTTP ' + $response.StatusCode) }
++    return $response
++}
++function Invoke-LabRestMethod {
++    param([string]$Uri, [string]$Method='GET', [string]$Body, [string]$ContentType, $WebSession)
++    $response = Invoke-LabWebRequest -Uri $Uri -Method $Method -Body $Body -ContentType $ContentType -WebSession $WebSession
++    if ($response.Content) { return ($response.Content | ConvertFrom-Json) }
+ }
+diff --git a/homelab/tls/Caddyfile b/homelab/tls/Caddyfile
+new file mode 100644
+--- /dev/null
++++ b/homelab/tls/Caddyfile
+@@ -0,0 +1,17 @@
++{
++    admin off
++    auto_https disable_redirects
++    default_sni 127.0.0.1
++}
++https://127.0.0.1:51821 {
++    tls internal
++    reverse_proxy wireguard:51821
++}
++https://127.0.0.1:13001 {
++    tls internal
++    reverse_proxy uptime:3001
++}
++https://127.0.0.1:6631 {
++    tls internal
++    reverse_proxy printserver:631
++}
+diff --git a/tests/tls_http.py b/tests/tls_http.py
+new file mode 100644
+--- /dev/null
++++ b/tests/tls_http.py
+@@ -0,0 +1,47 @@
++"""Standard-library TLS adapter for the homelab's PowerShell 5.1 checks.
++
++Installed as tests/tls_http.py by remediate.py. Requests arrive via stdin so
++credentials are never command-line arguments or evidence output.
++"""
++import http.cookiejar
++import json
++from pathlib import Path
++import ssl
++import sys
++import tempfile
++import urllib.error
++import urllib.request
++from urllib.parse import urlsplit
++
++r = json.load(sys.stdin)
++u = urlsplit(r['url'])
++if u.hostname != '127.0.0.1' or (u.scheme, u.port) not in {('https', 51821), ('https', 13001), ('https', 6631), ('http', 13002)}:
++    raise SystemExit('Refused non-lab HTTP request')
++ca = Path(__file__).resolve().parents[1] / 'homelab/tls/lab-root.crt'
++handlers = [urllib.request.ProxyHandler({}), urllib.request.HTTPSHandler(context=ssl.create_default_context(cafile=str(ca)))]
++jar = None
++if r.get('cookie_jar'):
++    path = Path(r['cookie_jar']).resolve()
++    if path.parent != Path(tempfile.gettempdir()).resolve() or not path.name.startswith('homelab-wg-'):
++        raise SystemExit('Refused cookie jar outside temporary lab session')
++    jar = http.cookiejar.LWPCookieJar(str(path))
++    if path.exists() and path.stat().st_size: jar.load(ignore_discard=True)
++    handlers.append(urllib.request.HTTPCookieProcessor(jar))
++class NoRedirect(urllib.request.HTTPRedirectHandler):
++    def redirect_request(self, req, fp, code, msg, headers, newurl):
++        if urlsplit(newurl).netloc != urlsplit(req.full_url).netloc:
++            raise ValueError('Refused redirect outside same loopback origin')
++        return super().redirect_request(req, fp, code, msg, headers, newurl)
++handlers.append(NoRedirect())
++body = r.get('body')
++headers = r.get('headers') or {}
++if r.get('content_type'): headers['Content-Type'] = r['content_type']
++req = urllib.request.Request(r['url'], data=body.encode() if body else None, headers=headers, method=(r.get('method') or 'GET').upper())
++try:
++    response = urllib.request.build_opener(*handlers).open(req, timeout=30)
++except urllib.error.HTTPError as e:
++    response = e
++with response:
++    data = {'StatusCode': response.code, 'Content': response.read().decode('utf-8', 'replace')}
++if jar: jar.save(ignore_discard=True)
++print(json.dumps(data))

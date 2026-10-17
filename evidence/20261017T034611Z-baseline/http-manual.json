@@ -1,0 +1,22 @@
+{
+  "http": [
+    {
+      "url": "http://127.0.0.1:51821/",
+      "status": 200,
+      "server": null,
+      "basic_challenge": null,
+      "body_sha256": "72efd863433c3e301512e2fb3a1f6c9b413ddf7b7a3d9bc1c48cc4b6c77de927"
+    },
+    {
+      "url": "http://127.0.0.1:13001/",
+      "status": 302,
+      "basic_challenge": null
+    },
+    {
+      "url": "http://127.0.0.1:6631/admin/",
+      "status": 401,
+      "basic_challenge": "Basic realm=\"CUPS\""
+    }
+  ],
+  "https": []
+}

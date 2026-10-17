@@ -1,0 +1,7 @@
+# Nmap 7.93 scan initiated Sat Oct 17 13:37:29 2026 as: nmap -n -sn -oA /evidence/discovery 172.20.0.5 172.20.0.7 172.20.0.2 172.20.0.4 172.20.0.3
+Host: 172.20.0.5 ()	Status: Up
+Host: 172.20.0.7 ()	Status: Up
+Host: 172.20.0.2 ()	Status: Up
+Host: 172.20.0.4 ()	Status: Up
+Host: 172.20.0.3 ()	Status: Up
+# Nmap done at Sat Oct 17 13:37:29 2026 -- 5 IP addresses (5 hosts up) scanned in 0.09 seconds

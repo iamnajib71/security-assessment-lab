@@ -1,0 +1,77 @@
+﻿Lab simulation; 2026-10-17 14:51:24 Australia/Sydney
+PowerShell 5.1.26100.9711
+> compose ps wireguard
+3ca66c721dffc5218c4d4fc93a762466ba15359a38d0611687a8595fb9a603af
+> inspect wireguard running
+true
+PASS wireguard container running
+> compose ps fileserver
+69b17c6b5fa47073c3fa4456b081599435a7e48c1fb6100f0fc53a525c421175
+> inspect fileserver running
+true
+PASS fileserver container running
+> compose ps printserver
+14b38b8c1dc7de34d120134e9c9625a69f7dbabee23fba7c770847bb37152a2f
+> inspect printserver running
+true
+PASS printserver container running
+> compose ps uptime
+8d6ea9dae855ee0b9f84a3d4f092463ff04d0b20a43475228cde25681ad274c7
+> inspect uptime running
+true
+PASS uptime container running
+> compose ps homepage
+5dcaa91a6248c914dd3c3d960835dee92c9f78ae19a9f53ca602d8b394bd0eaf
+> inspect homepage running
+true
+PASS homepage container running
+> smbclient: list; Finance ACL; Public read/write
+Sharename       Type      Comment
+	---------       ----      -------
+	Public          Disk      Company-wide read/write
+	Finance         Disk      Finance team only
+	Scans           Disk      Scanner drop folder
+	IPC$            IPC       IPC Service (Samba Server)
+SMB1 disabled -- no workgroup available
+putting file /tmp/check-1792209087-169.txt as \check-1792209087-169.txt (50.8 kb/s) (average 50.8 kb/s)
+getting file \check-1792209087-169.txt of size 52 as /tmp/check-1792209087-169-download.txt (50.8 KiloBytes/sec) (average 50.8 KiloBytes/sec)
+PASS Alice Finance write
+tree connect failed: NT_STATUS_ACCESS_DENIED
+PASS Bob Finance denied
+putting file /tmp/check-1792209087-169.txt as \check-1792209087-169.txt (50.8 kb/s) (average 50.8 kb/s)
+getting file \check-1792209087-169.txt of size 52 as /tmp/check-1792209087-169-download.txt (50.8 KiloBytes/sec) (average 50.8 KiloBytes/sec)
+PASS alice Public read/write
+putting file /tmp/check-1792209087-169.txt as \check-1792209087-169.txt (50.8 kb/s) (average 50.8 kb/s)
+getting file \check-1792209087-169.txt of size 52 as /tmp/check-1792209087-169-download.txt (50.8 KiloBytes/sec) (average 50.8 KiloBytes/sec)
+PASS bob Public read/write
+PASS Samba shares and access control
+> lpstat; Office-PDF job; completed state and PDF artifact
+printer Office-Laser is idle.  enabled since Sat Oct 17 03:49:03 2026
+printer Office-PDF is idle.  enabled since Sat Oct 17 03:50:24 2026
+system default destination: Office-PDF
+printer Office-PDF is idle.  enabled since Sat Oct 17 03:50:24 2026
+printer Office-Laser is idle.  enabled since Sat Oct 17 03:49:03 2026
+request id is Office-PDF-24 (1 file(s))
+"/lab-job-completed.test":
+    Job completed, not cancelled or aborted                              [PASS]
+Office-PDF-24           root              1024   Sat Oct 17 03:51:28 2026
+PDF artifact: /shares/scans/pdf/check-1792209088-149__using_non-Linux-generated_files.pdf
+PASS PDF job completed (IPP job-state=9)
+PASS CUPS queues and completed test page
+GET / => HTTP 200
+GET /jobs => HTTP 200
+GET /printers => HTTP 200
+GET /admin/ without credentials => HTTP 401
+GET /admin/ as print => HTTP 200
+PASS CUPS public views and authenticated administration
+POST /api/session => success; peer listed: check-d2478233f855 10.8.0.5
+DELETE peer => success; absent on subsequent GET
+PASS WireGuard UI and peer create/list/delete
+GET https://127.0.0.1:13001 => HTTP 200
+PASS Uptime Kuma HTTP response
+GET /api/status-page/heartbeat/office => 6 monitors, all UP
+PASS Uptime Kuma status page: every office monitor UP
+GET http://127.0.0.1:13002 => HTTP 200
+PASS Office dashboard (Homepage) responds
+RESULT: 0 failed checks
+Evidence: H:\My Projects - IT\it-support-homelab\docs\evidence\homelab-check-20261017-145124-598.txt

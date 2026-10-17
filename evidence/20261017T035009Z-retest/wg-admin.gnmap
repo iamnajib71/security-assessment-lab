@@ -1,0 +1,4 @@
+# Nmap 7.93 scan initiated Sat Oct 17 03:52:20 2026 as: nmap -n -sT -Pn -sV --version-light -p 51821 --script http-title,http-headers --script-timeout 10s --max-rate 10 -oA /evidence/wg-admin 172.20.0.3
+Host: 172.20.0.3 ()	Status: Up
+Host: 172.20.0.3 ()	Ports: 51821/open/tcp//unknown///
+# Nmap done at Sat Oct 17 03:52:31 2026 -- 1 IP address (1 host up) scanned in 11.26 seconds
