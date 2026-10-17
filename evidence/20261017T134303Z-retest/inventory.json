@@ -1,0 +1,191 @@
+[
+  {
+    "asset": "directory",
+    "address": "172.20.0.5",
+    "ports": [
+      {
+        "port": 53,
+        "protocol": "tcp",
+        "service": "domain",
+        "version": "generic dns response: NOTIMP",
+        "scripts": {
+          "dns-nsid": "\n  id.server: mel02"
+        }
+      },
+      {
+        "port": 88,
+        "protocol": "tcp",
+        "service": "kerberos-sec",
+        "version": "server time: 2026-10-17 13:44:17Z",
+        "scripts": {}
+      },
+      {
+        "port": 135,
+        "protocol": "tcp",
+        "service": "msrpc",
+        "version": "Microsoft Windows RPC",
+        "scripts": {}
+      },
+      {
+        "port": 139,
+        "protocol": "tcp",
+        "service": "netbios-ssn",
+        "version": "Samba smbd 4.6.2",
+        "scripts": {}
+      },
+      {
+        "port": 389,
+        "protocol": "tcp",
+        "service": "ldap",
+        "version": "Anonymous bind OK",
+        "scripts": {
+          "ssl-cert": "Subject: commonName=DC1.itops.lab/organizationName=Samba Administration\nNot valid before: 2026-10-06T04:54:18\nNot valid after:  2028-09-05T04:54:18",
+          "ssl-date": "TLS randomness does not represent time"
+        }
+      },
+      {
+        "port": 445,
+        "protocol": "tcp",
+        "service": "netbios-ssn",
+        "version": "Samba smbd 4.6.2",
+        "scripts": {}
+      },
+      {
+        "port": 464,
+        "protocol": "tcp",
+        "service": "kpasswd5",
+        "version": "",
+        "scripts": {}
+      },
+      {
+        "port": 636,
+        "protocol": "tcp",
+        "service": "ldap",
+        "version": "Anonymous bind OK",
+        "scripts": {
+          "ssl-cert": "Subject: commonName=DC1.itops.lab/organizationName=Samba Administration\nNot valid before: 2026-10-06T04:54:18\nNot valid after:  2028-09-05T04:54:18",
+          "ssl-date": "TLS randomness does not represent time"
+        }
+      },
+      {
+        "port": 3268,
+        "protocol": "tcp",
+        "service": "ldap",
+        "version": "Anonymous bind OK",
+        "scripts": {
+          "ssl-cert": "Subject: commonName=DC1.itops.lab/organizationName=Samba Administration\nNot valid before: 2026-10-06T04:54:18\nNot valid after:  2028-09-05T04:54:18",
+          "ssl-date": "TLS randomness does not represent time"
+        }
+      },
+      {
+        "port": 3269,
+        "protocol": "tcp",
+        "service": "ldap",
+        "version": "Anonymous bind OK",
+        "scripts": {
+          "ssl-date": "TLS randomness does not represent time",
+          "ssl-cert": "Subject: commonName=DC1.itops.lab/organizationName=Samba Administration\nNot valid before: 2026-10-06T04:54:18\nNot valid after:  2028-09-05T04:54:18"
+        }
+      },
+      {
+        "port": 49152,
+        "protocol": "tcp",
+        "service": "unknown",
+        "version": "",
+        "scripts": {}
+      },
+      {
+        "port": 49153,
+        "protocol": "tcp",
+        "service": "unknown",
+        "version": "",
+        "scripts": {}
+      },
+      {
+        "port": 49154,
+        "protocol": "tcp",
+        "service": "unknown",
+        "version": "",
+        "scripts": {}
+      }
+    ],
+    "scripts": {
+      "nbstat": "NetBIOS name: DC1, NetBIOS user: <unknown>, NetBIOS MAC: f007738a2475 (unknown)",
+      "smb2-security-mode": "\n  311: \n    Message signing enabled and required",
+      "smb2-time": "\n  date: 2026-10-17T13:44:43\n  start_date: N/A"
+    }
+  },
+  {
+    "asset": "fileserver",
+    "address": "172.20.0.7",
+    "ports": [
+      {
+        "port": 139,
+        "protocol": "tcp",
+        "service": "netbios-ssn",
+        "version": "Samba smbd 4.6.2",
+        "scripts": {}
+      },
+      {
+        "port": 445,
+        "protocol": "tcp",
+        "service": "netbios-ssn",
+        "version": "Samba smbd 4.6.2",
+        "scripts": {}
+      }
+    ],
+    "scripts": {
+      "smb2-security-mode": "\n  311: \n    Message signing enabled and required",
+      "smb2-time": "\n  date: 2026-10-17T13:44:44\n  start_date: N/A"
+    }
+  },
+  {
+    "asset": "printserver",
+    "address": "172.20.0.2",
+    "ports": [
+      {
+        "port": 631,
+        "protocol": "tcp",
+        "service": "ipp",
+        "version": "CUPS 2.4",
+        "scripts": {
+          "http-title": "Home - CUPS 2.4.18",
+          "http-robots.txt": "1 disallowed entry \n/"
+        }
+      }
+    ],
+    "scripts": {}
+  },
+  {
+    "asset": "uptime",
+    "address": "172.20.0.4",
+    "ports": [
+      {
+        "port": 3001,
+        "protocol": "tcp",
+        "service": "nessus",
+        "version": "",
+        "scripts": {
+          "fingerprint-strings": "\n  GetRequest: \n    HTTP/1.1 302 Found\n    X-Frame-Options: SAMEORIGIN\n    Location: /dashboard\n    Vary: Accept\n    Content-Type: text/plain; charset=utf-8\n    Content-Length: 32\n    Date: Sat, 17 Oct 2026 13:44:22 GMT\n    Connection: close\n    Found. Redirecting to /dashboard\n  NCP, SSLSessionReq, TLSSessionReq: \n    HTTP/1.1 400 Bad Request\n    Connection: close"
+        }
+      }
+    ],
+    "scripts": {}
+  },
+  {
+    "asset": "wireguard",
+    "address": "172.20.0.3",
+    "ports": [
+      {
+        "port": 51821,
+        "protocol": "tcp",
+        "service": "unknown",
+        "version": "",
+        "scripts": {
+          "fingerprint-strings": "\n  GetRequest: \n    HTTP/1.1 200 OK\n    Content-Type: text/html\n    last-modified: Tue, 03 Jun 2025 07:59:10 GMT\n    content-length: 40602\n    Set-Cookie: connect.sid=s%3AsEojWb_EujLldHukEwtbLQuYg9pG0kZ6.9Qd1dgXctHuNSjTOSlQFRw1E%2FMJl9Ze5L1Y68SeQ1CQ; Path=/; HttpOnly\n    Date: Sat, 17 Oct 2026 13:45:25 GMT\n    Connection: close\n    <!DOCTYPE html>\n    <html>\n    <head>\n    <title>WireGuard</title>\n    <meta charset=\"utf-8\"/>\n    <link href=\"./css/app.css\" rel=\"stylesheet\">\n    <link rel=\"manifest\" href=\"./manifest.json\">\n    <link rel=\"icon\" type=\"image/png\" href=\"./img/favicon.png\">\n    <link rel=\"apple-touch-icon\" href=\"./img/apple-touch-icon.png\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n    <meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\n    <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black-translucent\">\n    </head>\n    <style>\n    [v-cloak] {\n    display: none;\n    .line-chart\n  SSLSessionReq, TLSSessionReq: \n    HTTP/1.1 400 Bad Request\n    Connection: close"
+        }
+      }
+    ],
+    "scripts": {}
+  }
+]

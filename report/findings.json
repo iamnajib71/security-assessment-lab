@@ -14,7 +14,7 @@
       "status": "Fixed - retested",
       "evidence": [
         "../evidence/20261017T034611Z-baseline/checks.json",
-        "../evidence/20261017T133728Z-retest/checks.json"
+        "../evidence/20261017T134303Z-retest/checks.json"
       ]
     },
     {
@@ -30,7 +30,7 @@
       "status": "Fixed - retested",
       "evidence": [
         "../evidence/20261017T034611Z-baseline/checks.json",
-        "../evidence/20261017T133728Z-retest/checks.json"
+        "../evidence/20261017T134303Z-retest/checks.json"
       ]
     },
     {
@@ -46,10 +46,10 @@
       "status": "Fixed - retested",
       "evidence": [
         "../evidence/20261017T034611Z-baseline/checks.json",
-        "../evidence/20261017T133728Z-retest/checks.json"
+        "../evidence/20261017T134303Z-retest/checks.json"
       ]
     }
   ],
   "baseline": "20261017T034611Z-baseline",
-  "current": "20261017T133728Z-retest"
+  "current": "20261017T134303Z-retest"
 }

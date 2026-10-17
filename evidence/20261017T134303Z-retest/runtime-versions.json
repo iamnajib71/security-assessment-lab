@@ -1,0 +1,22 @@
+{
+  "wireguard": {
+    "returncode": 0,
+    "output": "1.0.1"
+  },
+  "uptime": {
+    "returncode": 0,
+    "output": "1.23.17"
+  },
+  "fileserver": {
+    "returncode": 0,
+    "output": "Version 4.12.2"
+  },
+  "directory": {
+    "returncode": 0,
+    "output": "Version 4.17.12-Debian"
+  },
+  "printserver": {
+    "returncode": 0,
+    "output": "2.4.18-1"
+  }
+}

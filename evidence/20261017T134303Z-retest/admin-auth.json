@@ -1,0 +1,8 @@
+{
+  "wireguard_anonymous_protected_api": {
+    "url": "https://127.0.0.1:51821/api/wireguard/client",
+    "status": 500,
+    "basic_challenge": null
+  },
+  "kuma_anonymous": "needSetup=false\n{\"ok\":false,\"msg\":\"You are not logged in.\"}\n"
+}

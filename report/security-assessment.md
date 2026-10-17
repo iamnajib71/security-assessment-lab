@@ -4,7 +4,7 @@
 
 Owner-authorized local learning and assessment. No third-party engagement.
 
-Baseline: `20261017T034611Z-baseline`. Latest assessment: `20261017T133728Z-retest` (UTC timestamps).
+Baseline: `20261017T034611Z-baseline`. Latest assessment: `20261017T134303Z-retest` (UTC timestamps).
 
 ## Executive summary
 
@@ -29,9 +29,9 @@ Ratings are CVSS-style qualitative priorities, adjusted for actual access prereq
 
 | ID | Asset | Severity | Finding | Evidence | Remediation | Status |
 |---|---|---|---|---|---|---|
-| SAL-01 | fileserver / SMB 445 | Medium | SMB signing is optional | [before](../evidence/20261017T034611Z-baseline/checks.json) / [after](../evidence/20261017T133728Z-retest/checks.json) | Set server signing = mandatory in the persistent fileserver Compose command; recreate the service and require signed client sessions. | Fixed - retested |
-| SAL-02 | directory / ITOPS.LAB | Low | Zero minimum password age permits rapid password changes | [before](../evidence/20261017T034611Z-baseline/checks.json) / [after](../evidence/20261017T133728Z-retest/checks.json) | Set minimum password age to one day in seed.sh and the running directory; preserve administrative password-reset workflows. | Fixed - retested |
-| SAL-03 | wg-easy, Uptime Kuma, CUPS / host loopback | Low | Administration uses plaintext HTTP | [before](../evidence/20261017T034611Z-baseline/checks.json) / [after](../evidence/20261017T133728Z-retest/checks.json) | Terminate TLS with a local Caddy CA on the same loopback admin ports and remove direct HTTP host publications. Trust the exported public CA explicitly. Internal office-lan HTTP remains a documented residual risk. | Fixed - retested |
+| SAL-01 | fileserver / SMB 445 | Medium | SMB signing is optional | [before](../evidence/20261017T034611Z-baseline/checks.json) / [after](../evidence/20261017T134303Z-retest/checks.json) | Set server signing = mandatory in the persistent fileserver Compose command; recreate the service and require signed client sessions. | Fixed - retested |
+| SAL-02 | directory / ITOPS.LAB | Low | Zero minimum password age permits rapid password changes | [before](../evidence/20261017T034611Z-baseline/checks.json) / [after](../evidence/20261017T134303Z-retest/checks.json) | Set minimum password age to one day in seed.sh and the running directory; preserve administrative password-reset workflows. | Fixed - retested |
+| SAL-03 | wg-easy, Uptime Kuma, CUPS / host loopback | Low | Administration uses plaintext HTTP | [before](../evidence/20261017T034611Z-baseline/checks.json) / [after](../evidence/20261017T134303Z-retest/checks.json) | Terminate TLS with a local Caddy CA on the same loopback admin ports and remove direct HTTP host publications. Trust the exported public CA explicitly. Internal office-lan HTTP remains a documented residual risk. | Fixed - retested |
 
 ## SAL-01 - SMB signing is optional
 
@@ -47,7 +47,7 @@ CVSS-style qualitative Medium: adjacent-network prerequisite, potential confiden
     Message signing enabled but not required; latest: 311: 
     Message signing enabled and required. Independent loopback SMB2 required bit: True; SecurityMode: 3.
 
-[Baseline raw proof](../evidence/20261017T034611Z-baseline/smb-manual.txt) and [retest raw proof](../evidence/20261017T133728Z-retest/smb-manual.txt).
+[Baseline raw proof](../evidence/20261017T034611Z-baseline/smb-manual.txt) and [retest raw proof](../evidence/20261017T134303Z-retest/smb-manual.txt).
 
 **Remediation:** Set server signing = mandatory in the persistent fileserver Compose command; recreate the service and require signed client sessions.
 
@@ -65,7 +65,7 @@ CVSS-style qualitative Low: requires a valid local domain account; policy weakne
 
 **Observed account proof:** baseline: SELF_CHANGE_RC=0; SELF_CHANGE_RC=0; RAPID_CHANGES_ALLOWED=true. Latest: SELF_CHANGE_RC=255; RAPID_CHANGES_ALLOWED=false. Temporary account deletion is confirmed in each raw log.
 
-[Baseline raw proof](../evidence/20261017T034611Z-baseline/ad-manual.txt) and [retest raw proof](../evidence/20261017T133728Z-retest/ad-manual.txt).
+[Baseline raw proof](../evidence/20261017T034611Z-baseline/ad-manual.txt) and [retest raw proof](../evidence/20261017T134303Z-retest/ad-manual.txt).
 
 **Remediation:** Set minimum password age to one day in seed.sh and the running directory; preserve administrative password-reset workflows.
 
@@ -87,7 +87,7 @@ Before: http://127.0.0.1:51821/ => 200; http://127.0.0.1:13001/ => 302; http://1
 
 After: http://127.0.0.1:51821/ => 400; http://127.0.0.1:13001/ => 400; http://127.0.0.1:6631/admin/ => 400; https://127.0.0.1:51821/ => 200; https://127.0.0.1:13001/ => 302; https://127.0.0.1:6631/admin/ => 401.
 
-[Baseline raw proof](../evidence/20261017T034611Z-baseline/http-manual.json) and [retest raw proof](../evidence/20261017T133728Z-retest/http-manual.json).
+[Baseline raw proof](../evidence/20261017T034611Z-baseline/http-manual.json) and [retest raw proof](../evidence/20261017T134303Z-retest/http-manual.json).
 
 **Remediation:** Terminate TLS with a local Caddy CA on the same loopback admin ports and remove direct HTTP host publications. Trust the exported public CA explicitly. Internal office-lan HTTP remains a documented residual risk.
 
@@ -123,7 +123,7 @@ The baseline Nmap guessed Samba 4.6.2; the runtime file-server check reported 4.
 | Asset | IP | TCP port | Service | Version |
 |---|---|---|---|---|
 | directory | 172.20.0.5 | 53 | domain | generic dns response: NOTIMP |
-| directory | 172.20.0.5 | 88 | kerberos-sec | server time: 2026-10-17 13:38:42Z |
+| directory | 172.20.0.5 | 88 | kerberos-sec | server time: 2026-10-17 13:44:17Z |
 | directory | 172.20.0.5 | 135 | msrpc | Microsoft Windows RPC |
 | directory | 172.20.0.5 | 139 | netbios-ssn | Samba smbd 4.6.2 |
 | directory | 172.20.0.5 | 389 | ldap | Anonymous bind OK |
@@ -200,42 +200,42 @@ The baseline Nmap guessed Samba 4.6.2; the runtime file-server check reported 4.
 - [baseline/wg-admin.gnmap](../evidence/20261017T034611Z-baseline/wg-admin.gnmap)
 - [baseline/wg-admin.nmap](../evidence/20261017T034611Z-baseline/wg-admin.nmap)
 - [baseline/wg-admin.xml](../evidence/20261017T034611Z-baseline/wg-admin.xml)
-- [latest/ad-groups-acls.txt](../evidence/20261017T133728Z-retest/ad-groups-acls.txt)
-- [latest/ad-manual.txt](../evidence/20261017T133728Z-retest/ad-manual.txt)
-- [latest/ad-policy.txt](../evidence/20261017T133728Z-retest/ad-policy.txt)
-- [latest/admin-auth.json](../evidence/20261017T133728Z-retest/admin-auth.json)
-- [latest/checks.json](../evidence/20261017T133728Z-retest/checks.json)
-- [latest/credential-quality.json](../evidence/20261017T133728Z-retest/credential-quality.json)
-- [latest/discovery-console.txt](../evidence/20261017T133728Z-retest/discovery-console.txt)
-- [latest/discovery.gnmap](../evidence/20261017T133728Z-retest/discovery.gnmap)
-- [latest/discovery.nmap](../evidence/20261017T133728Z-retest/discovery.nmap)
-- [latest/discovery.xml](../evidence/20261017T133728Z-retest/discovery.xml)
-- [latest/firewall.txt](../evidence/20261017T133728Z-retest/firewall.txt)
-- [latest/http-manual.json](../evidence/20261017T133728Z-retest/http-manual.json)
-- [latest/images.json](../evidence/20261017T133728Z-retest/images.json)
-- [latest/inventory.json](../evidence/20261017T133728Z-retest/inventory.json)
-- [latest/inventory.md](../evidence/20261017T133728Z-retest/inventory.md)
-- [latest/loopback-inventory.json](../evidence/20261017T133728Z-retest/loopback-inventory.json)
-- [latest/nmap-version.txt](../evidence/20261017T133728Z-retest/nmap-version.txt)
-- [latest/nuclei-console.txt](../evidence/20261017T133728Z-retest/nuclei-console.txt)
-- [latest/nuclei-normalized.json](../evidence/20261017T133728Z-retest/nuclei-normalized.json)
-- [latest/nuclei-version.txt](../evidence/20261017T133728Z-retest/nuclei-version.txt)
-- [latest/nuclei.jsonl](../evidence/20261017T133728Z-retest/nuclei.jsonl)
-- [latest/runtime-versions.json](../evidence/20261017T133728Z-retest/runtime-versions.json)
-- [latest/scanner.txt](../evidence/20261017T133728Z-retest/scanner.txt)
-- [latest/scope.json](../evidence/20261017T133728Z-retest/scope.json)
-- [latest/services-console.txt](../evidence/20261017T133728Z-retest/services-console.txt)
-- [latest/services.gnmap](../evidence/20261017T133728Z-retest/services.gnmap)
-- [latest/services.nmap](../evidence/20261017T133728Z-retest/services.nmap)
-- [latest/services.xml](../evidence/20261017T133728Z-retest/services.xml)
-- [latest/sha256.json](../evidence/20261017T133728Z-retest/sha256.json)
-- [latest/smb-manual.txt](../evidence/20261017T133728Z-retest/smb-manual.txt)
-- [latest/smb-negotiate.json](../evidence/20261017T133728Z-retest/smb-negotiate.json)
-- [latest/urls.txt](../evidence/20261017T133728Z-retest/urls.txt)
-- [latest/wg-admin-console.txt](../evidence/20261017T133728Z-retest/wg-admin-console.txt)
-- [latest/wg-admin.gnmap](../evidence/20261017T133728Z-retest/wg-admin.gnmap)
-- [latest/wg-admin.nmap](../evidence/20261017T133728Z-retest/wg-admin.nmap)
-- [latest/wg-admin.xml](../evidence/20261017T133728Z-retest/wg-admin.xml)
+- [latest/ad-groups-acls.txt](../evidence/20261017T134303Z-retest/ad-groups-acls.txt)
+- [latest/ad-manual.txt](../evidence/20261017T134303Z-retest/ad-manual.txt)
+- [latest/ad-policy.txt](../evidence/20261017T134303Z-retest/ad-policy.txt)
+- [latest/admin-auth.json](../evidence/20261017T134303Z-retest/admin-auth.json)
+- [latest/checks.json](../evidence/20261017T134303Z-retest/checks.json)
+- [latest/credential-quality.json](../evidence/20261017T134303Z-retest/credential-quality.json)
+- [latest/discovery-console.txt](../evidence/20261017T134303Z-retest/discovery-console.txt)
+- [latest/discovery.gnmap](../evidence/20261017T134303Z-retest/discovery.gnmap)
+- [latest/discovery.nmap](../evidence/20261017T134303Z-retest/discovery.nmap)
+- [latest/discovery.xml](../evidence/20261017T134303Z-retest/discovery.xml)
+- [latest/firewall.txt](../evidence/20261017T134303Z-retest/firewall.txt)
+- [latest/http-manual.json](../evidence/20261017T134303Z-retest/http-manual.json)
+- [latest/images.json](../evidence/20261017T134303Z-retest/images.json)
+- [latest/inventory.json](../evidence/20261017T134303Z-retest/inventory.json)
+- [latest/inventory.md](../evidence/20261017T134303Z-retest/inventory.md)
+- [latest/loopback-inventory.json](../evidence/20261017T134303Z-retest/loopback-inventory.json)
+- [latest/nmap-version.txt](../evidence/20261017T134303Z-retest/nmap-version.txt)
+- [latest/nuclei-console.txt](../evidence/20261017T134303Z-retest/nuclei-console.txt)
+- [latest/nuclei-normalized.json](../evidence/20261017T134303Z-retest/nuclei-normalized.json)
+- [latest/nuclei-version.txt](../evidence/20261017T134303Z-retest/nuclei-version.txt)
+- [latest/nuclei.jsonl](../evidence/20261017T134303Z-retest/nuclei.jsonl)
+- [latest/runtime-versions.json](../evidence/20261017T134303Z-retest/runtime-versions.json)
+- [latest/scanner.txt](../evidence/20261017T134303Z-retest/scanner.txt)
+- [latest/scope.json](../evidence/20261017T134303Z-retest/scope.json)
+- [latest/services-console.txt](../evidence/20261017T134303Z-retest/services-console.txt)
+- [latest/services.gnmap](../evidence/20261017T134303Z-retest/services.gnmap)
+- [latest/services.nmap](../evidence/20261017T134303Z-retest/services.nmap)
+- [latest/services.xml](../evidence/20261017T134303Z-retest/services.xml)
+- [latest/sha256.json](../evidence/20261017T134303Z-retest/sha256.json)
+- [latest/smb-manual.txt](../evidence/20261017T134303Z-retest/smb-manual.txt)
+- [latest/smb-negotiate.json](../evidence/20261017T134303Z-retest/smb-negotiate.json)
+- [latest/urls.txt](../evidence/20261017T134303Z-retest/urls.txt)
+- [latest/wg-admin-console.txt](../evidence/20261017T134303Z-retest/wg-admin-console.txt)
+- [latest/wg-admin.gnmap](../evidence/20261017T134303Z-retest/wg-admin.gnmap)
+- [latest/wg-admin.nmap](../evidence/20261017T134303Z-retest/wg-admin.nmap)
+- [latest/wg-admin.xml](../evidence/20261017T134303Z-retest/wg-admin.xml)
 
 Raw Nmap XML/normal/grepable output, Nuclei JSONL, service proofs and SHA-256 manifests are linked above. These logs are collected at source without credential values, cookies, tokens or complete Docker inspect output.
 

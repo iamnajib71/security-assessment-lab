@@ -101,6 +101,8 @@ docker build -t security-assessment-scanner:1 .
 
 Open `report/security-assessment.md` or `report/security-assessment.pdf`. Each run writes a new timestamped `evidence/` directory. Allow roughly three minutes per scan on this lab. Nothing is uploaded by the assessment. The published sample is static; no live scanner is hosted.
 
+These commands passed from a fresh GitHub clone on 18 October 2026: [validation record and raw run](docs/validation.md).
+
 `scripts/remediate.py` applies only the three documented hardening changes to the owned lab and updates its PowerShell HTTP checks to validate the explicit local CA. It is safe to repeat and never seeds vulnerable settings. Local backups are ignored in `private/`. Browser trust is a separate choice; CLI checks use the exported public CA without `--insecure`.
 
 For the standard sibling layout, `make assess` or `python scripts/assess.py --phase retest` runs recon → scan → checks → report after the scanner image is built. On an **unmodified** owned homelab, use `--phase baseline` before remediation to capture your own before state. Never weaken a fixed lab just to replay the demonstration. Existing historical evidence is retained and clearly dated.

@@ -1,0 +1,32 @@
+[
+  {
+    "address": "127.0.0.1",
+    "port": 1445,
+    "open": true
+  },
+  {
+    "address": "127.0.0.1",
+    "port": 1389,
+    "open": true
+  },
+  {
+    "address": "127.0.0.1",
+    "port": 1636,
+    "open": true
+  },
+  {
+    "address": "127.0.0.1",
+    "port": 51821,
+    "open": true
+  },
+  {
+    "address": "127.0.0.1",
+    "port": 13001,
+    "open": true
+  },
+  {
+    "address": "127.0.0.1",
+    "port": 6631,
+    "open": true
+  }
+]

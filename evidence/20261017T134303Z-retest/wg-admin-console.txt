@@ -1,0 +1,60 @@
+Starting Nmap 7.93 ( https://nmap.org ) at 2026-10-17 13:45 UTC
+Nmap scan report for 172.20.0.3
+Host is up (0.00019s latency).
+
+PORT      STATE SERVICE VERSION
+51821/tcp open  unknown
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.1 200 OK
+|     Content-Type: text/html
+|     last-modified: Tue, 03 Jun 2025 07:59:10 GMT
+|     content-length: 40602
+|     Set-Cookie: connect.sid=s%3AsEojWb_EujLldHukEwtbLQuYg9pG0kZ6.9Qd1dgXctHuNSjTOSlQFRw1E%2FMJl9Ze5L1Y68SeQ1CQ; Path=/; HttpOnly
+|     Date: Sat, 17 Oct 2026 13:45:25 GMT
+|     Connection: close
+|     <!DOCTYPE html>
+|     <html>
+|     <head>
+|     <title>WireGuard</title>
+|     <meta charset="utf-8"/>
+|     <link href="./css/app.css" rel="stylesheet">
+|     <link rel="manifest" href="./manifest.json">
+|     <link rel="icon" type="image/png" href="./img/favicon.png">
+|     <link rel="apple-touch-icon" href="./img/apple-touch-icon.png">
+|     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+|     <meta name="apple-mobile-web-app-capable" content="yes">
+|     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+|     </head>
+|     <style>
+|     [v-cloak] {
+|     display: none;
+|     .line-chart
+|   SSLSessionReq, TLSSessionReq: 
+|     HTTP/1.1 400 Bad Request
+|_    Connection: close
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port51821-TCP:V=7.93%I=2%D=10/17%Time=6AD37BF5%P=x86_64-pc-linux-gnu%r(
+SF:GetRequest,1C48,"HTTP/1\.1\x20200\x20OK\r\nContent-Type:\x20text/html\r
+SF:\nlast-modified:\x20Tue,\x2003\x20Jun\x202025\x2007:59:10\x20GMT\r\ncon
+SF:tent-length:\x2040602\r\nSet-Cookie:\x20connect\.sid=s%3AsEojWb_EujLldH
+SF:ukEwtbLQuYg9pG0kZ6\.9Qd1dgXctHuNSjTOSlQFRw1E%2FMJl9Ze5L1Y68SeQ1CQ;\x20P
+SF:ath=/;\x20HttpOnly\r\nDate:\x20Sat,\x2017\x20Oct\x202026\x2013:45:25\x2
+SF:0GMT\r\nConnection:\x20close\r\n\r\n<!DOCTYPE\x20html>\n<html>\n\n<head
+SF:>\n\x20\x20<title>WireGuard</title>\n\x20\x20<meta\x20charset=\"utf-8\"
+SF:/>\n\x20\x20<link\x20href=\"\./css/app\.css\"\x20rel=\"stylesheet\">\n\
+SF:x20\x20<link\x20rel=\"manifest\"\x20href=\"\./manifest\.json\">\n\x20\x
+SF:20<link\x20rel=\"icon\"\x20type=\"image/png\"\x20href=\"\./img/favicon\
+SF:.png\">\n\x20\x20<link\x20rel=\"apple-touch-icon\"\x20href=\"\./img/app
+SF:le-touch-icon\.png\">\n\x20\x20<meta\x20name=\"viewport\"\x20content=\"
+SF:width=device-width,\x20initial-scale=1,\x20viewport-fit=cover\">\n\x20\
+SF:x20<meta\x20name=\"apple-mobile-web-app-capable\"\x20content=\"yes\">\n
+SF:\x20\x20<meta\x20name=\"apple-mobile-web-app-status-bar-style\"\x20cont
+SF:ent=\"black-translucent\">\n</head>\n<style>\n\x20\x20\[v-cloak\]\x20{\
+SF:n\x20\x20\x20\x20display:\x20none;\n\x20\x20}\n\x20\x20\.line-chart\x20
+SF:")%r(SSLSessionReq,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection
+SF::\x20close\r\n\r\n")%r(TLSSessionReq,2F,"HTTP/1\.1\x20400\x20Bad\x20Req
+SF:uest\r\nConnection:\x20close\r\n\r\n");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 11.33 seconds
