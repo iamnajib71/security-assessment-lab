@@ -12,7 +12,7 @@ A repeatable, owner-authorized security assessment of my IT support homelab: fin
 
 The GIF records an actual assessment and its report, then reviews the original and fixed SMB signing evidence. Playback is accelerated to 60 seconds; [the terminal recording](docs/demo.cast) retains original timing. It does not recreate weaknesses in an already-fixed lab.
 
-## What it shows recruiters
+## Technical capabilities
 
 - Finds real misconfigurations using bounded reconnaissance, a reviewed scanner set and authenticated service checks.
 - Writes a professional report with contextual severity, raw evidence, clear remediation and honest limits.
