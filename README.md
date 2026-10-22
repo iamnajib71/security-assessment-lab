@@ -2,6 +2,20 @@
 
 A repeatable, owner-authorized security assessment of my IT support homelab: find, verify, fix, and retest with evidence.
 
+<!-- project-overview:start -->
+## Project overview
+
+| Area | What to look for |
+| --- | --- |
+| **Problem addressed** | Service misconfigurations need verified findings, targeted fixes and a retest showing normal support workflows still work. |
+| **Implemented work** | Assessed five owned homelab service hosts, verified three findings, applied the documented fixes and retested them. Published evidence records three fixed findings and zero open confirmed findings. |
+| **Skills demonstrated** | Bounded reconnaissance, Nmap, reviewed Nuclei templates, authenticated checks, SMB/AD hardening, evidence handling and technical reporting. |
+| **Demo** | [Watch the real assessment and evidence review](docs/demo.gif), then open the [sample report](https://iamnajib71.github.io/security-assessment-lab/). Historical before/after evidence is dated. |
+| **How to use it** | [Quick start](#quick-start): provision the owned homelab dependency, build the scanner and run the retest. Expected: a timestamped evidence directory and Markdown/PDF report. |
+| **Verification** | [Findings summary](#findings-summary), [manual verification](docs/manual-verification.md) and [evidence provenance](evidence/README.md). Test only the explicitly owned lab targets. |
+
+<!-- project-overview:end -->
+
 ![Actual local assessment producing the report and reviewing before/after evidence](docs/demo.gif)
 
 [![CI](https://github.com/iamnajib71/security-assessment-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/iamnajib71/security-assessment-lab/actions/workflows/ci.yml)
