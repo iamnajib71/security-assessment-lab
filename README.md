@@ -1,36 +1,37 @@
 # Security Assessment Lab
 
-A repeatable, owner-authorized security assessment of my IT support homelab: find, verify, fix, and retest with evidence.
+I assessed my own simulated office services, fixed verified security weaknesses and retested them while checking that staff access and support tasks still worked.
 
-<!-- project-overview:start -->
-## Project overview
+![Actual assessment and before/after evidence review](docs/demo.gif)
 
-| Area | What to look for |
+[![CI](https://github.com/iamnajib71/security-assessment-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/iamnajib71/security-assessment-lab/actions/workflows/ci.yml) · [MIT licence](LICENSE)
+
+## At a glance
+
+| Area | Evidence-backed summary |
 | --- | --- |
-| **Problem addressed** | Service misconfigurations need verified findings, targeted fixes and a retest showing normal support workflows still work. |
-| **Implemented work** | Assessed five owned homelab service hosts, verified three findings, applied the documented fixes and retested them. Published evidence records three fixed findings and zero open confirmed findings. |
-| **Skills demonstrated** | Bounded reconnaissance, Nmap, reviewed Nuclei templates, authenticated checks, SMB/AD hardening, evidence handling and technical reporting. |
-| **Demo** | [Watch the real assessment and evidence review](docs/demo.gif), then open the [sample report](https://iamnajib71.github.io/security-assessment-lab/). Historical before/after evidence is dated. |
-| **How to use it** | [Quick start](#quick-start): provision the owned homelab dependency, build the scanner and run the retest. Expected: a timestamped evidence directory and Markdown/PDF report. |
-| **Verification** | [Findings summary](#findings-summary), [manual verification](docs/manual-verification.md) and [evidence provenance](evidence/README.md). Test only the explicitly owned lab targets. |
+| **The problem** | An office administrator can expose account and file-management services through weak settings; staff access and administration then carry avoidable security risk, while careless fixes can disrupt support. This exercise uses only my owned homelab. |
+| **What I built** | I scoped the assessment, verified scanner observations with service checks, applied targeted hardening and published a report with raw before/after evidence. |
+| **Results** | [3 verified findings fixed and retested, with 0 open confirmed findings](report/security-assessment.md); [14 unit tests passed and support/directory regressions reported zero failures](docs/validation.md). This is a bounded lab assessment. |
+| **Skills shown** | Security assessment, Nmap, Nuclei, vulnerability validation, SMB, Active Directory, Python, remediation, regression testing and technical reporting. |
+| **Relevant roles** | Junior Security Analyst, Vulnerability Analyst, IT Support Analyst, Junior Systems Administrator. |
+| **How it was built** | Designed, specified and reviewed by me; built with Codex as my coding agent (vibe coding). Verification and its limits are linked below. |
+| **Try it / evidence** | [Sample report](https://iamnajib71.github.io/security-assessment-lab/) · [PDF report](report/security-assessment.pdf) · [Raw evidence](evidence/) · [Quick start](#quick-start) |
 
-<!-- project-overview:end -->
+## What I did, step by step
 
-![Actual local assessment producing the report and reviewing before/after evidence](docs/demo.gif)
+1. Confirmed ownership and limited the target list to the [explicitly allowed homelab services](SECURITY.md).
+2. Captured the baseline with bounded scans and authenticated checks, preserving the [raw evidence and provenance](evidence/README.md).
+3. Distinguished informational scanner observations from verified findings and explained their practical impact in the [report](report/security-assessment.md).
+4. Hardened file-service signing, directory password policy and local administration transport; recorded the [change and rollback procedures](docs/remediation.md).
+5. Retested each finding and reran support and directory workflows to detect regressions.
+6. Repeated the documented commands from a clean public clone and published the [validation record](docs/validation.md).
 
-[![CI](https://github.com/iamnajib71/security-assessment-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/iamnajib71/security-assessment-lab/actions/workflows/ci.yml)
-[![MIT licence](https://img.shields.io/badge/licence-MIT-green.svg)](LICENSE)
-![Python](https://img.shields.io/badge/main%20language-Python-3776AB.svg)
+## Problems I hit and how I solved them
 
-**Runs locally.** [Sample report](https://iamnajib71.github.io/security-assessment-lab/) · [PDF](report/security-assessment.pdf) · [Raw evidence](evidence/) · [Manual verification](docs/manual-verification.md)
-
-The GIF records an actual assessment and its report, then reviews the original and fixed SMB signing evidence. Playback is accelerated to 60 seconds; [the terminal recording](docs/demo.cast) retains original timing. It does not recreate weaknesses in an already-fixed lab.
-
-## Technical capabilities
-
-- Finds real misconfigurations using bounded reconnaissance, a reviewed scanner set and authenticated service checks.
-- Writes a professional report with contextual severity, raw evidence, clear remediation and honest limits.
-- Remediates the actual homelab and retests the controls while preserving working support workflows.
+- **The initial signing check gave a misleading result:** a client preference still allowed mandatory signing, so I replaced that closure check with the actual negotiation required bit plus signed access. [Preserved intermediate evidence](evidence/README.md).
+- **The first assessment stopped at a Windows/Linux newline boundary:** retained only completed runs as published evidence and documented the failed attempt. [Provenance](evidence/README.md).
+- **Hardening could break routine support:** reran the existing support and directory tests after remediation; both recorded zero failures. [Validation and transcripts](docs/validation.md).
 
 ## Scope and authorization
 
@@ -70,7 +71,7 @@ flowchart LR
 
 ## Findings summary
 
-Baseline: **17 October 2026**; latest retest: **18 October 2026 (Australia/Sydney)**. **5 service hosts; 3 verified findings; 1 Medium, 2 Low; 3 fixed and retested; 0 open confirmed findings.** Informational scanner observations and residual risks are separate from that count.
+[Published assessment evidence](report/security-assessment.md). Baseline: **17 October 2026**; latest retest: **18 October 2026 (Australia/Sydney)**. **5 service hosts; 3 verified findings; 1 Medium, 2 Low; 3 fixed and retested; 0 open confirmed findings.** Informational scanner observations and residual risks are separate from that count.
 
 | ID | Asset | Severity | Verified finding | Status |
 |---|---|---|---|---|
@@ -113,7 +114,7 @@ docker build -t security-assessment-scanner:1 .
 .\.venv\Scripts\python.exe scripts/verify_evidence.py
 ```
 
-Open `report/security-assessment.md` or `report/security-assessment.pdf`. Each run writes a new timestamped `evidence/` directory. Allow roughly three minutes per scan on this lab. Nothing is uploaded by the assessment. The published sample is static; no live scanner is hosted.
+Open `report/security-assessment.md` or `report/security-assessment.pdf`. Each run writes a new timestamped `evidence/` directory. Nothing is uploaded by the assessment. The published sample is static; no live scanner is hosted.
 
 These commands passed from a fresh GitHub clone on 18 October 2026: [validation record and raw run](docs/validation.md).
 
@@ -147,4 +148,4 @@ tests/fixtures/    explicitly synthetic parser data; never live evidence
 
 ## Built by Nazmul Hassan
 
-[LinkedIn](https://www.linkedin.com/in/iamnajib71) · [GitHub](https://github.com/iamnajib71) · [Target homelab](https://github.com/iamnajib71/it-support-homelab)
+[LinkedIn](https://www.linkedin.com/in/iamnajib71) · [GitHub](https://github.com/iamnajib71)
