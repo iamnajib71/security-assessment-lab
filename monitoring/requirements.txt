@@ -1,0 +1,3 @@
+# Setup only; CI and the pure detection tests need no extra libraries.
+PyYAML==6.0.3
+bcrypt==5.0.0

@@ -1,0 +1,7 @@
+{
+    "computer":  "CLIENT01",
+    "domain":  "corp.lab",
+    "agent":  "Running",
+    "sysmon":  "Running",
+    "monitoring_audits_retained":  true
+}

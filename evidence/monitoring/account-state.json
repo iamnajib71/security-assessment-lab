@@ -1,0 +1,37 @@
+[
+    {
+        "SamAccountName":  "soc.lockout",
+        "Enabled":  true,
+        "LockedOut":  true,
+        "badPwdCount":  5,
+        "LastBadPasswordAttempt":  "\/Date(1792816605704)\/"
+    },
+    {
+        "SamAccountName":  "alex.morgan",
+        "Enabled":  true,
+        "LockedOut":  false,
+        "badPwdCount":  1,
+        "LastBadPasswordAttempt":  "\/Date(1792816283142)\/"
+    },
+    {
+        "SamAccountName":  "soc.disabled",
+        "Enabled":  false,
+        "LockedOut":  false,
+        "badPwdCount":  0,
+        "LastBadPasswordAttempt":  null
+    },
+    {
+        "SamAccountName":  "soc.privilege",
+        "Enabled":  false,
+        "LockedOut":  false,
+        "badPwdCount":  0,
+        "LastBadPasswordAttempt":  null
+    },
+    {
+        "SamAccountName":  "soc.share",
+        "Enabled":  true,
+        "LockedOut":  false,
+        "badPwdCount":  0,
+        "LastBadPasswordAttempt":  null
+    }
+]

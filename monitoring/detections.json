@@ -1,0 +1,9 @@
+[
+  {"rule":"110101","name":"Privileged group membership added","technique":"T1098.007","source":"Security 4728/4732/4756; privileged group SID","ticket":"01-privileged-group.md"},
+  {"rule":"110102","name":"Fictional account locked out","technique":"T1110.001","source":"DC01 Security 4740; caller CLIENT01","ticket":"02-account-lockout.md"},
+  {"rule":"110103","name":"Disabled fictional account sign-in","technique":"T1078","source":"Security 4625; status/substatus C0000072","ticket":"03-disabled-sign-in.md"},
+  {"rule":"110104","name":"Service installed on DC01","technique":"T1543.003","source":"System 7045 / Security 4697","ticket":"04-service-created.md"},
+  {"rule":"110105","name":"Scheduled task registered on DC01","technique":"T1053.005","source":"Security 4698","ticket":"05-task-created.md"},
+  {"rule":"110106","name":"Audit policy changed on DC01","technique":"T1562.002","source":"Security 4719","ticket":"06-audit-policy.md"},
+  {"rule":"110107","name":"Restricted lab share access denied","technique":"T1039","source":"Security 5145 Audit Failure; SocRestricted share","ticket":"07-share-denied.md"}
+]

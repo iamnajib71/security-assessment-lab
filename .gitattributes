@@ -7,4 +7,6 @@
 *.png binary
 *.pdf binary
 evidence/** -text
+evidence/monitoring/** whitespace=cr-at-eol
+evidence/monitoring/rules-before-tuning.xml -whitespace
 *.patch text eol=lf

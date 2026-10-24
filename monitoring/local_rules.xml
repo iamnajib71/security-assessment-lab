@@ -1,0 +1,100 @@
+<!-- Original lab rules; native Windows group linkage. No upstream rules modified. -->
+<group name="soc_lab,windows,">
+  <rule id="110101" level="10">
+    <if_group>windows</if_group>
+    <field name="win.system.computer" type="pcre2">(?i)^(DC01|CLIENT01)(\.corp\.lab)?$</field>
+    <field name="win.system.channel">^Security$</field>
+    <field name="win.system.eventID" type="pcre2">^(4728|4732|4756)$</field>
+    <field name="win.eventdata.targetSid" type="pcre2">^S-1-5-(32-544|21-\d+-\d+-\d+-(512|518|519))$</field>
+    <description>SOC lab: privileged group member added</description>
+    <mitre>
+      <id>T1098.007</id>
+    </mitre>
+  </rule>
+  <rule id="110102" level="8">
+    <if_group>windows</if_group>
+    <field name="win.system.computer" type="pcre2">(?i)^(DC01|CLIENT01)(\.corp\.lab)?$</field>
+    <field name="win.system.channel">^Security$</field>
+    <field name="win.system.eventID">^4740$</field>
+    <field name="win.eventdata.targetUserName" type="pcre2">(?i)^soc\.lockout$</field>
+    <field name="win.eventdata.targetDomainName" type="pcre2">(?i)^CLIENT01$</field>
+    <description>SOC lab: fictional account locked out from CLIENT01</description>
+    <mitre>
+      <id>T1110.001</id>
+    </mitre>
+  </rule>
+  <rule id="110103" level="7">
+    <if_group>windows</if_group>
+    <field name="win.system.computer" type="pcre2">(?i)^(DC01|CLIENT01)(\.corp\.lab)?$</field>
+    <field name="win.system.channel">^Security$</field>
+    <field name="win.system.eventID">^4625$</field>
+    <field name="win.eventdata.targetUserName" type="pcre2">(?i)^soc\.disabled$</field>
+    <field name="win.eventdata.status" type="pcre2">(?i)^0xc0000072$</field>
+    <description>SOC lab: disabled fictional account sign-in (status)</description>
+    <mitre>
+      <id>T1078</id>
+    </mitre>
+  </rule>
+  <rule id="110108" level="7">
+    <if_group>windows</if_group>
+    <field name="win.system.computer" type="pcre2">(?i)^(DC01|CLIENT01)(\.corp\.lab)?$</field>
+    <field name="win.system.channel">^Security$</field>
+    <field name="win.system.eventID">^4625$</field>
+    <field name="win.eventdata.targetUserName" type="pcre2">(?i)^soc\.disabled$</field>
+    <field name="win.eventdata.subStatus" type="pcre2">(?i)^0xc0000072$</field>
+    <description>SOC lab: disabled fictional account sign-in (substatus)</description>
+    <mitre>
+      <id>T1078</id>
+    </mitre>
+  </rule>
+  <rule id="110104" level="8">
+    <if_group>windows</if_group>
+    <field name="win.system.computer" type="pcre2">(?i)^DC01(\.corp\.lab)?$</field>
+    <field name="win.system.eventID" type="pcre2">^(7045|4697)$</field>
+    <description>SOC lab: service installed on DC01</description>
+    <mitre>
+      <id>T1543.003</id>
+    </mitre>
+  </rule>
+  <rule id="110105" level="8">
+    <if_group>windows</if_group>
+    <field name="win.system.channel">^Security$</field>
+    <field name="win.system.computer" type="pcre2">(?i)^DC01(\.corp\.lab)?$</field>
+    <field name="win.system.eventID">^4698$</field>
+    <description>SOC lab: scheduled task registered on DC01</description>
+    <mitre>
+      <id>T1053.005</id>
+    </mitre>
+  </rule>
+  <rule id="110106" level="8">
+    <if_group>windows</if_group>
+    <field name="win.system.channel">^Security$</field>
+    <field name="win.system.computer" type="pcre2">(?i)^DC01(\.corp\.lab)?$</field>
+    <field name="win.system.eventID">^4719$</field>
+    <description>SOC lab: audit policy changed on DC01</description>
+    <mitre>
+      <id>T1562.002</id>
+    </mitre>
+  </rule>
+  <!-- Before tuning this matched successful and failed access. Only failures matter
+       for this detection; successful access remains in archives. No user exclusions. -->
+  <rule id="110107" level="6">
+    <if_group>windows</if_group>
+    <field name="win.system.computer" type="pcre2">(?i)^(DC01|CLIENT01)(\.corp\.lab)?$</field>
+    <field name="win.system.channel">^Security$</field>
+    <field name="win.system.eventID">^5145$</field>
+    <field name="win.eventdata.shareName" type="pcre2">(?i)\\SocRestricted$</field>
+    <field name="win.system.keywords" type="pcre2">(?i)^0x8010000000000000$</field>
+    <description>SOC lab: restricted share access denied</description>
+    <mitre>
+      <id>T1039</id>
+    </mitre>
+  </rule>
+  <rule id="110109" level="3">
+    <if_group>windows</if_group>
+    <field name="win.system.computer" type="pcre2">(?i)^(DC01|CLIENT01)(\.corp\.lab)?$</field>
+    <field name="win.system.channel">^Microsoft-Windows-Sysmon/Operational$</field>
+    <description>SOC lab: scoped Sysmon telemetry (context, not an incident)</description>
+    <group>soc_context,</group>
+  </rule>
+</group>

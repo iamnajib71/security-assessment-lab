@@ -1,0 +1,12 @@
+{
+  "method": "read-only Docker stdout/stderr export from four verified stopped owned containers",
+  "source_window": "36h ending at actual collection time; original timestamps retained inside log text",
+  "wazuh_archived_per_location": {
+    "/lab-logs/directory.log": 749,
+    "/lab-logs/fileserver.log": 12,
+    "/lab-logs/wireguard.log": 46,
+    "/lab-logs/printserver.log": 12
+  },
+  "total_archived": 819,
+  "limitations": "Startup/service logs only; no full Samba object, CUPS job or WireGuard peer auditing claim; port 1636 was Windows-reserved"
+}

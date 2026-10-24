@@ -1,0 +1,18 @@
+{
+  "kind": "native Wazuh alerts",
+  "total_detection_alerts": 13,
+  "per_detection": {
+    "110101": 2,
+    "110104": 4,
+    "110105": 2,
+    "110106": 2,
+    "110102": 1,
+    "110107": 1,
+    "110103": 1
+  },
+  "first_ingestion": "2026-10-24T03:57:12.589+0000",
+  "last_ingestion": "2026-10-24T04:42:54.970+0000",
+  "distinct_detections": 7,
+  "sysmon_context_samples": 2,
+  "note": "Repeated approved validation changes can create multiple alerts; these are not distinct attacks."
+}

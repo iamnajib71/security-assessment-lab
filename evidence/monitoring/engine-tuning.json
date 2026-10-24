@@ -1,0 +1,12 @@
+{
+  "method": "Wazuh logtest / temporary JSON group bridge / captured Windows fields",
+  "native_agent_acceptance": false,
+  "input_events": 42,
+  "before_alerts": 42,
+  "after_alerts": 1,
+  "successful_events": 41,
+  "denied_events": 1,
+  "current_rules_sha256": "8913ebe4a513920ead670d1c1a7ec5fd68bb6b4858c562b2aa4d620f09c64aae",
+  "before_rules_sha256": "e33b50a265871160785709d29478ef44f417c6c6852fbf162b62fab4e6715c21",
+  "current_rules_lf_sha256": "8a57fee9cb8eb5694e61095345b11326234d7acbdf72de42518045ddc07d5da1"
+}

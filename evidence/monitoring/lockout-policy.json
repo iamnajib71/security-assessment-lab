@@ -1,0 +1,29 @@
+{
+    "LockoutThreshold":  5,
+    "LockoutDuration":  {
+                            "Ticks":  9000000000,
+                            "Days":  0,
+                            "Hours":  0,
+                            "Milliseconds":  0,
+                            "Minutes":  15,
+                            "Seconds":  0,
+                            "TotalDays":  0.010416666666666666,
+                            "TotalHours":  0.25,
+                            "TotalMilliseconds":  900000,
+                            "TotalMinutes":  15,
+                            "TotalSeconds":  900
+                        },
+    "LockoutObservationWindow":  {
+                                     "Ticks":  9000000000,
+                                     "Days":  0,
+                                     "Hours":  0,
+                                     "Milliseconds":  0,
+                                     "Minutes":  15,
+                                     "Seconds":  0,
+                                     "TotalDays":  0.010416666666666666,
+                                     "TotalHours":  0.25,
+                                     "TotalMilliseconds":  900000,
+                                     "TotalMinutes":  15,
+                                     "TotalSeconds":  900
+                                 }
+}

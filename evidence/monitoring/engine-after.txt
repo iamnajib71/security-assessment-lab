@@ -1,0 +1,1683 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Starting wazuh-logtest v4.14.9
+Type one log per line
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8010000000000000", "eventRecordID": "25010", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T04:37:52.1093305Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-1121", "subjectUserName": "soc.share", "subjectDomainName": "CORP", "subjectLogonId": "0x5c5239", "objectType": "File", "ipAddress": "192.168.77.100", "ipPort": "50179", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1805\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1805
+				'
+	win.eventdata.ipAddress: '192.168.77.100'
+	win.eventdata.ipPort: '50179'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0x5c5239'
+	win.eventdata.subjectUserName: 'soc.share'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-1121'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '25010'
+	win.system.keywords: '0x8010000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T04:37:52.1093305Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110107'
+	level: '6'
+	description: 'SOC lab: restricted share access denied'
+	groups: '['soc_lab', 'windows']'
+	firedtimes: '1'
+	mail: 'False'
+	mitre.id: '['T1039']'
+	mitre.tactic: '['Collection']'
+	mitre.technique: '['Data from Network Shared Drive']'
+**Alert to be generated.
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "25005", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T04:37:52.0655563Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0x5c51ce", "objectType": "File", "ipAddress": "192.168.77.100", "ipPort": "50179", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "\\", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: '192.168.77.100'
+	win.eventdata.ipPort: '50179'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: '\'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0x5c51ce'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '25005'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T04:37:52.0655563Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '1'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24606", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:58:02.2347388Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0x5783d2", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55267", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x120089", "accessList": "%%1538\n\t\t\t\t%%1541\n\t\t\t\t%%4416\n\t\t\t\t%%4419\n\t\t\t\t%%4423\n\t\t\t\t", "accessReason": "%%1538:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%1541:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4416:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4419:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%1538
+				%%1541
+				%%4416
+				%%4419
+				%%4423
+				'
+	win.eventdata.accessMask: '0x120089'
+	win.eventdata.accessReason: '%%1538:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%1541:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4416:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4419:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55267'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0x5783d2'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24606'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:58:02.2347388Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '2'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24605", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:58:02.2344278Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0x5783d2", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55267", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55267'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0x5783d2'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24605'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:58:02.2344278Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '3'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24604", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:58:02.2340981Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0x5783d2", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55267", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55267'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0x5783d2'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24604'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:58:02.2340981Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '4'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24603", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:58:02.2337872Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0x5783d2", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55267", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55267'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0x5783d2'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24603'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:58:02.2337872Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '5'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24602", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:58:02.2319236Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0x5783d2", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55267", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x120089", "accessList": "%%1538\n\t\t\t\t%%1541\n\t\t\t\t%%4416\n\t\t\t\t%%4419\n\t\t\t\t%%4423\n\t\t\t\t", "accessReason": "%%1538:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%1541:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4416:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4419:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%1538
+				%%1541
+				%%4416
+				%%4419
+				%%4423
+				'
+	win.eventdata.accessMask: '0x120089'
+	win.eventdata.accessReason: '%%1538:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%1541:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4416:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4419:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55267'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0x5783d2'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24602'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:58:02.2319236Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '6'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24601", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:58:02.2315836Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0x5783d2", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55267", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55267'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0x5783d2'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24601'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:58:02.2315836Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '7'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24600", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:58:02.2312390Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0x5783d2", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55267", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55267'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0x5783d2'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24600'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:58:02.2312390Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '8'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24599", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:58:02.2309300Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0x5783d2", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55267", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55267'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0x5783d2'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24599'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:58:02.2309300Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '9'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24598", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:58:02.2289977Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0x5783d2", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55267", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x120089", "accessList": "%%1538\n\t\t\t\t%%1541\n\t\t\t\t%%4416\n\t\t\t\t%%4419\n\t\t\t\t%%4423\n\t\t\t\t", "accessReason": "%%1538:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%1541:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4416:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4419:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%1538
+				%%1541
+				%%4416
+				%%4419
+				%%4423
+				'
+	win.eventdata.accessMask: '0x120089'
+	win.eventdata.accessReason: '%%1538:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%1541:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4416:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4419:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55267'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0x5783d2'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24598'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:58:02.2289977Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '10'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24597", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:58:02.2286354Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0x5783d2", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55267", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55267'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0x5783d2'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24597'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:58:02.2286354Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '11'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24596", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:58:02.2282926Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0x5783d2", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55267", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55267'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0x5783d2'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24596'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:58:02.2282926Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '12'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24595", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:58:02.2279478Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0x5783d2", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55267", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55267'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0x5783d2'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24595'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:58:02.2279478Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '13'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24594", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:58:02.2256906Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0x5783d2", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55267", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x120089", "accessList": "%%1538\n\t\t\t\t%%1541\n\t\t\t\t%%4416\n\t\t\t\t%%4419\n\t\t\t\t%%4423\n\t\t\t\t", "accessReason": "%%1538:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%1541:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4416:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4419:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%1538
+				%%1541
+				%%4416
+				%%4419
+				%%4423
+				'
+	win.eventdata.accessMask: '0x120089'
+	win.eventdata.accessReason: '%%1538:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%1541:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4416:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4419:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55267'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0x5783d2'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24594'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:58:02.2256906Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '14'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24593", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:58:02.2253275Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0x5783d2", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55267", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55267'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0x5783d2'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24593'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:58:02.2253275Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '15'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24592", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:58:02.2249188Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0x5783d2", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55267", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55267'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0x5783d2'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24592'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:58:02.2249188Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '16'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24591", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:58:02.2245557Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0x5783d2", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55267", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55267'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0x5783d2'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24591'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:58:02.2245557Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '17'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24590", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:58:02.2154934Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0x5783d2", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55267", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x120089", "accessList": "%%1538\n\t\t\t\t%%1541\n\t\t\t\t%%4416\n\t\t\t\t%%4419\n\t\t\t\t%%4423\n\t\t\t\t", "accessReason": "%%1538:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%1541:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4416:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4419:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%1538
+				%%1541
+				%%4416
+				%%4419
+				%%4423
+				'
+	win.eventdata.accessMask: '0x120089'
+	win.eventdata.accessReason: '%%1538:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%1541:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4416:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4419:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55267'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0x5783d2'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24590'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:58:02.2154934Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '18'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24589", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:58:02.2150689Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0x5783d2", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55267", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55267'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0x5783d2'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24589'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:58:02.2150689Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '19'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24588", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:58:02.2146315Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0x5783d2", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55267", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55267'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0x5783d2'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24588'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:58:02.2146315Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '20'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24587", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:58:02.2141581Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0x5783d2", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55267", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55267'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0x5783d2'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24587'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:58:02.2141581Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '21'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24298", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:44:55.9389783Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0xbfe81", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55168", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x120089", "accessList": "%%1538\n\t\t\t\t%%1541\n\t\t\t\t%%4416\n\t\t\t\t%%4419\n\t\t\t\t%%4423\n\t\t\t\t", "accessReason": "%%1538:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%1541:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4416:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4419:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%1538
+				%%1541
+				%%4416
+				%%4419
+				%%4423
+				'
+	win.eventdata.accessMask: '0x120089'
+	win.eventdata.accessReason: '%%1538:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%1541:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4416:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4419:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55168'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0xbfe81'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24298'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:44:55.9389783Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '22'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24297", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:44:55.9386218Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0xbfe81", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55168", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55168'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0xbfe81'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24297'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:44:55.9386218Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '23'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24296", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:44:55.9382972Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0xbfe81", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55168", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55168'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0xbfe81'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24296'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:44:55.9382972Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '24'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24295", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:44:55.9379315Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0xbfe81", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55168", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55168'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0xbfe81'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24295'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:44:55.9379315Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '25'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24294", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:44:55.9357593Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0xbfe81", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55168", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x120089", "accessList": "%%1538\n\t\t\t\t%%1541\n\t\t\t\t%%4416\n\t\t\t\t%%4419\n\t\t\t\t%%4423\n\t\t\t\t", "accessReason": "%%1538:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%1541:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4416:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4419:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%1538
+				%%1541
+				%%4416
+				%%4419
+				%%4423
+				'
+	win.eventdata.accessMask: '0x120089'
+	win.eventdata.accessReason: '%%1538:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%1541:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4416:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4419:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55168'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0xbfe81'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24294'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:44:55.9357593Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '26'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24293", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:44:55.9354143Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0xbfe81", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55168", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55168'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0xbfe81'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24293'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:44:55.9354143Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '27'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24292", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:44:55.9350848Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0xbfe81", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55168", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55168'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0xbfe81'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24292'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:44:55.9350848Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '28'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24291", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:44:55.9347354Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0xbfe81", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55168", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55168'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0xbfe81'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24291'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:44:55.9347354Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '29'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24290", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:44:55.9326665Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0xbfe81", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55168", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x120089", "accessList": "%%1538\n\t\t\t\t%%1541\n\t\t\t\t%%4416\n\t\t\t\t%%4419\n\t\t\t\t%%4423\n\t\t\t\t", "accessReason": "%%1538:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%1541:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4416:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4419:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%1538
+				%%1541
+				%%4416
+				%%4419
+				%%4423
+				'
+	win.eventdata.accessMask: '0x120089'
+	win.eventdata.accessReason: '%%1538:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%1541:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4416:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4419:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55168'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0xbfe81'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24290'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:44:55.9326665Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '30'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24289", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:44:55.9323248Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0xbfe81", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55168", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55168'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0xbfe81'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24289'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:44:55.9323248Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '31'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24288", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:44:55.9320003Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0xbfe81", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55168", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55168'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0xbfe81'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24288'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:44:55.9320003Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '32'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24287", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:44:55.9316274Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0xbfe81", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55168", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55168'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0xbfe81'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24287'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:44:55.9316274Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '33'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24286", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:44:55.9294842Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0xbfe81", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55168", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x120089", "accessList": "%%1538\n\t\t\t\t%%1541\n\t\t\t\t%%4416\n\t\t\t\t%%4419\n\t\t\t\t%%4423\n\t\t\t\t", "accessReason": "%%1538:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%1541:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4416:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4419:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%1538
+				%%1541
+				%%4416
+				%%4419
+				%%4423
+				'
+	win.eventdata.accessMask: '0x120089'
+	win.eventdata.accessReason: '%%1538:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%1541:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4416:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4419:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55168'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0xbfe81'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24286'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:44:55.9294842Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '34'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24285", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:44:55.9291762Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0xbfe81", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55168", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55168'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0xbfe81'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24285'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:44:55.9291762Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '35'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24284", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:44:55.9288490Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0xbfe81", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55168", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55168'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0xbfe81'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24284'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:44:55.9288490Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '36'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24283", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:44:55.9284648Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0xbfe81", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55168", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55168'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0xbfe81'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24283'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:44:55.9284648Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '37'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24282", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:44:55.9196760Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0xbfe81", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55168", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x120089", "accessList": "%%1538\n\t\t\t\t%%1541\n\t\t\t\t%%4416\n\t\t\t\t%%4419\n\t\t\t\t%%4423\n\t\t\t\t", "accessReason": "%%1538:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%1541:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4416:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4419:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%1538
+				%%1541
+				%%4416
+				%%4419
+				%%4423
+				'
+	win.eventdata.accessMask: '0x120089'
+	win.eventdata.accessReason: '%%1538:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%1541:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4416:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4419:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55168'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0xbfe81'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24282'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:44:55.9196760Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '38'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24281", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:44:55.9193351Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0xbfe81", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55168", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55168'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0xbfe81'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24281'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:44:55.9193351Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '39'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24280", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:44:55.9189663Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0xbfe81", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55168", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55168'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0xbfe81'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24280'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:44:55.9189663Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '40'
+	mail: 'False'
+
+**Phase 1: Completed pre-decoding.
+	full event: '{"win": {"system": {"eventID": "5145", "computer": "DC01.corp.lab", "channel": "Security", "keywords": "0x8020000000000000", "eventRecordID": "24279", "providerName": "Microsoft-Windows-Security-Auditing", "systemTime": "2026-10-24T03:44:55.9185229Z"}, "eventdata": {"subjectUserSid": "S-1-5-21-2160013254-53532406-1998007980-500", "subjectUserName": "Administrator", "subjectDomainName": "CORP", "subjectLogonId": "0xbfe81", "objectType": "File", "ipAddress": "fe80::a9f8:67e9:d482:7559", "ipPort": "55168", "shareName": "\\\\*\\SocRestricted", "shareLocalPath": "\\??\\C:\\SocLab\\Restricted", "relativeTargetName": "example.txt", "accessMask": "0x80", "accessList": "%%4423\n\t\t\t\t", "accessReason": "%%4423:\t%%1801\tD:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)\n\t\t\t\t"}}}
+'
+
+**Phase 2: Completed decoding.
+	name: 'json'
+	win.eventdata.accessList: '%%4423
+				'
+	win.eventdata.accessMask: '0x80'
+	win.eventdata.accessReason: '%%4423:	%%1801	D:(A;;FA;;;S-1-5-21-2160013254-53532406-1998007980-512)
+				'
+	win.eventdata.ipAddress: 'fe80::a9f8:67e9:d482:7559'
+	win.eventdata.ipPort: '55168'
+	win.eventdata.objectType: 'File'
+	win.eventdata.relativeTargetName: 'example.txt'
+	win.eventdata.shareLocalPath: '\??\C:\SocLab\Restricted'
+	win.eventdata.shareName: '\\*\SocRestricted'
+	win.eventdata.subjectDomainName: 'CORP'
+	win.eventdata.subjectLogonId: '0xbfe81'
+	win.eventdata.subjectUserName: 'Administrator'
+	win.eventdata.subjectUserSid: 'S-1-5-21-2160013254-53532406-1998007980-500'
+	win.system.channel: 'Security'
+	win.system.computer: 'DC01.corp.lab'
+	win.system.eventID: '5145'
+	win.system.eventRecordID: '24279'
+	win.system.keywords: '0x8020000000000000'
+	win.system.providerName: 'Microsoft-Windows-Security-Auditing'
+	win.system.systemTime: '2026-10-24T03:44:55.9185229Z'
+
+**Phase 3: Completed filtering (rules).
+	id: '110000'
+	level: '0'
+	description: 'Temporary saved-field replay bridge; never native acceptance'
+	groups: '['soc_lab', 'windows', 'windows']'
+	firedtimes: '41'
+	mail: 'False'

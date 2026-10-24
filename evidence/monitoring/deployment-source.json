@@ -1,0 +1,6 @@
+{
+  "version": "4.14.9",
+  "upstream_commit": "56ece955b1107b7b62823afae5b7057e1dab9d98",
+  "upstream_license": "GPL-2.0",
+  "deployment": "generated from official single-node; private configuration"
+}

@@ -1,0 +1,11 @@
+{
+  "kind": "captured lab evidence",
+  "packaged_at": "2026-10-24T11:53:40.660786+00:00",
+  "collection": "Native Windows Wazuh EventChannel agents; buffered while manager stopped to reduce memory pressure",
+  "source_clock": "Windows systemTime in each XML; timestamps in alerts are ingestion times",
+  "lockout_method": "Owner-authorised Hyper-V console keyboard input; fixed deliberately wrong value; five capped submissions; no password search",
+  "lockout_caller_field": "Microsoft event 4740 TargetDomainName is the caller computer in this event schema",
+  "console_note": "One earlier blank attempt on fictional alex.morgan during navigation; account remained enabled and unlocked; recorded account state retained",
+  "synthetic_inputs": false,
+  "public_redactions": "PowerShell Direct -Token transport authentication values removed from Sysmon parent command lines; original captures retained privately. Alert IDs, source record IDs, timestamps and detection fields are unchanged."
+}

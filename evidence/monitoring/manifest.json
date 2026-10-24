@@ -1,0 +1,28 @@
+{
+  "kind": "captured lab evidence",
+  "sha256": {
+    "account-state.json": "963f96af37a61476473561cba24bba7b1c01afd2aac80036199a624cb3543243",
+    "alerts.jsonl": "5dbe760c53d2dbe8bb68f2811924dec4ad08196b71108843dd172105d75516ec",
+    "CLIENT01-cleanup-checks.json": "6cadcf8ba85a391c0948542cc51b4122ce06b65fcd29154ea90834a897ba5d2d",
+    "CLIENT01-enrollment.json": "f271d92abe6298b12adc972ffd5387b702852e9d1a5c804ce3bbb5774a9b7391",
+    "console-final-test-failure.png": "294d77e317eb18648388f52bb82d2168bcce3ac37b62ddeb3a45303ca98d9a1a",
+    "container-collection.json": "64adc0b48275d6d955c65cab2ad7fc3de7dacb72f5233a3ccb3822709da430e8",
+    "container-log-samples.jsonl": "5ddc925d589bea6f601440522a249b38dc277827a1a6af7001fea5f943f7e7b9",
+    "dashboard-lockout.png": "f2d3ffe563bb1ef87334395a679551f6a6d43b1f5416f59dd69444c5df40ec61",
+    "dashboard-overview.png": "6287f43deff0bf8084ed113fd1b81b2ec4c1f53ebd8ce32a67a8e389738e12d3",
+    "DC01-cleanup-checks.json": "8edd300d3bbfce6c3aeccfbbbf4e30fde9062d56c872087ed82ac06b053b6d94",
+    "DC01-enrollment.json": "a138663a27c48648b6ad5a81af926bb1ff41b0ba34a8389182367ee09111126d",
+    "deployment-source.json": "bd5c7517a5ab14140e1708a34f1129c7e0dd9ad3c1c8015bd04782841751b82a",
+    "engine-after.txt": "7b5ee6e7d6a1ea74d6991605d133ec4131e45a83ee8e4db9976192a72f4ad574",
+    "engine-before.txt": "cccfe38374d95c05a9dd926ed02c01d4f25c791e0ac66a6d10ac9072e9e17c46",
+    "engine-tuning.json": "361631dc69e5be0b83a1a07ab97e02aaa38771744662b9783838851773990a79",
+    "local-unit-tests.txt": "fe552938f524c655058efbd8f17bfbd43ac755bb41e73a0a8fa974aba02f6fee",
+    "local-validation.json": "83562224d102466f3c044728b012445aac2ef464df42158fa937779491f524c3",
+    "lockout-policy.json": "4bb43c7d984eaf3100563996d45168bd47e6a763f0acccebcb25709711f6f0f8",
+    "metrics.json": "423f1a0040ef09b820ad9aa9a767b6bc178c8b43e4107056676c70d93509875c",
+    "provenance.json": "f6e720aab61dfbe18f89712eb61c93d452fc4c91b5ae4572715feecd3edb0547",
+    "rules-before-tuning.xml": "e33b50a265871160785709d29478ef44f417c6c6852fbf162b62fab4e6715c21",
+    "sysmon-context.jsonl": "686825d6792f64fae7e719a3e0116f9964ca5446e3a7c235bfd091d266cdcb30",
+    "windows-events.jsonl": "9a4dd509ac13f057896307fd768f6592b748a2e2e21069c37fff59f1093ae307"
+  }
+}

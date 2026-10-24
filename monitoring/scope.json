@@ -1,0 +1,14 @@
+{
+  "homelab_path": "H:\\My Projects - IT\\it-support-homelab",
+  "adlab_path": "H:\\My Projects - IT\\windows-ad-lab",
+  "compose_project": "it-support-homelab",
+  "docker_network": "office-lan",
+  "docker_subnet": "172.20.0.0/16",
+  "container_services": ["directory", "fileserver", "wireguard", "printserver"],
+  "hyperv_switch": "WindowsADLab-Internal",
+  "domain": "corp.lab",
+  "manager_address": "192.168.77.1",
+  "vm_names": ["DC01", "CLIENT01"],
+  "fictional_accounts": ["soc.privilege", "soc.lockout", "soc.disabled", "soc.share"],
+  "prohibited": ["internet targets", "third-party systems", "exploits", "password guessing", "denial of service"]
+}

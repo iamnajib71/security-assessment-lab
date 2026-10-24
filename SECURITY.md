@@ -22,3 +22,22 @@ CA certificate is safe to export; its key stays in its Docker volume.
 If reporting a problem through Issues, include a minimal reproduction without
 credentials or private data. This project is a learning lab with no production
 support promise.
+
+## Defender extension
+
+Defender collection additionally authorises only the owner's existing
+`H:\My Projects - IT\windows-ad-lab` DC01 and CLIENT01 on
+`WindowsADLab-Internal` / `corp.lab`. This does not expand the assessment scanner's
+target list. Docker collection is limited to the four explicitly named services
+under the existing `it-support-homelab` path and `office-lan` network.
+
+No internet targets, third-party systems, exploits, password guessing or denial
+of service are permitted. All event exercises use ordinary administration on
+fictional accounts. The console test uses only CLIENT01, a fixed wrong test
+value and five capped submissions under owner authorisation. There is no
+credential search or failed-authentication API loop. Active response is off.
+
+Host, guest, source-container, ingress and resource guards are described in
+[the defender safety contract](docs/monitoring.md#ownership-and-safety-contract).
+Credentials remain in ignored `.env` and DPAPI storage. Never commit `.env`,
+`CLAUDE.md`, `AGENTS.md`, agent keys, browser cookies or private certificates.

@@ -1,0 +1,15 @@
+{
+    "computer":  "DC01",
+    "domain":  "corp.lab",
+    "agent":  "Running",
+    "sysmon":  "Running",
+    "monitoring_audits_retained":  true,
+    "exercise_accounts_absent":  true,
+    "exercise_share_absent":  true,
+    "exercise_service_absent":  true,
+    "exercise_task_absent":  true,
+    "alex_enabled":  true,
+    "alex_unlocked":  true,
+    "client_membership_retained":  true,
+    "department_shares_retained":  true
+}

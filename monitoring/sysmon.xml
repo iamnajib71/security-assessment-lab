@@ -1,0 +1,15 @@
+<Sysmon schemaversion="4.90">
+  <HashAlgorithms>sha256</HashAlgorithms>
+  <EventFiltering>
+    <!-- Narrow lab telemetry; do not log all process command lines or credentials. -->
+    <ProcessCreate onmatch="include">
+      <Image condition="end with">\sc.exe</Image>
+      <Image condition="end with">\schtasks.exe</Image>
+      <Image condition="end with">\whoami.exe</Image>
+    </ProcessCreate>
+    <NetworkConnect onmatch="include" />
+    <ProcessTerminate onmatch="include" />
+    <RegistryEvent onmatch="include" />
+    <FileCreate onmatch="include"><TargetFilename condition="begin with">C:\SocLab\</TargetFilename></FileCreate>
+  </EventFiltering>
+</Sysmon>

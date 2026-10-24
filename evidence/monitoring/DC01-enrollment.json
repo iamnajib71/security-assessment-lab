@@ -1,0 +1,9 @@
+{
+    "agent":  "Running",
+    "sysmon":  "Running",
+    "computer":  "DC01",
+    "resumed":  true,
+    "PSComputerName":  "DC01",
+    "RunspaceId":  "65fa3d56-3ab6-416f-b669-71bcc98c0252",
+    "PSShowComputerName":  true
+}
