@@ -15,7 +15,6 @@ I assessed my own simulated office services, fixed verified weaknesses and added
 | **Results** | [3 assessment findings fixed; 0 open confirmed findings](report/security-assessment.md). [7 detections produced 13 native alerts; share-rule replay tuned from 42 alerts to 1](docs/monitoring-status.md). [30 unit tests passed](evidence/monitoring/local-validation.json); existing assessment evidence remains intact. |
 | **Skills shown** | Wazuh, SIEM, Sysmon, MITRE ATT&CK, alert triage, detection tuning, security operations, Active Directory, Python, security assessment, Nmap, Nuclei, remediation and regression testing. |
 | **Relevant roles** | Junior SOC Analyst, Security Operations Analyst, IT Support Analyst, Junior Security Analyst, Junior Systems Administrator. |
-| **How it was built** | Designed, specified and reviewed by me; built with Codex as my coding agent (vibe coding), with every change tested in CI. |
 | **Try it / evidence** | [Assessment report](https://iamnajib71.github.io/security-assessment-lab/) · [Monitoring and coverage](#monitoring-and-detection) · [Defender runbook](docs/monitoring.md) · [Raw evidence](evidence/) · [Quick start](#quick-start) |
 
 ## Monitoring and detection

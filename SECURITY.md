@@ -40,4 +40,4 @@ credential search or failed-authentication API loop. Active response is off.
 Host, guest, source-container, ingress and resource guards are described in
 [the defender safety contract](docs/monitoring.md#ownership-and-safety-contract).
 Credentials remain in ignored `.env` and DPAPI storage. Never commit `.env`,
-`CLAUDE.md`, `AGENTS.md`, agent keys, browser cookies or private certificates.
+local tool configuration files, API keys, browser cookies or private certificates.

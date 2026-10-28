@@ -33,7 +33,7 @@ does not establish that an endpoint generated or delivered an event.
   is disabled: alerts never automatically disable accounts or change firewalls.
 - Credentials live in ignored `.env`; certificates, private keys, installer
   files and unreviewed telemetry live in ignored `private/monitoring/`.
-  Never commit `.env`, `CLAUDE.md` or `AGENTS.md`.
+  Never commit `.env` or local tool configuration files.
 
 ## Architecture
 
