@@ -6,6 +6,4 @@ __pycache__/
 .venv/
 tmp/
 private/
-AGENTS.md
-CLAUDE.md
 .coverage

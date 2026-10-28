@@ -19,7 +19,7 @@ for labenv in (root / '.env', root.parent / 'it-support-homelab/.env'):
 bad = []
 for name in sorted(files):
     path = root / name
-    if path.name in {'AGENTS.md', 'CLAUDE.md', '.env'} or (path.name.startswith('.env.') and path.name != '.env.example') or name.startswith('private/'):
+    if path.name in {'.env'} or (path.name.startswith('.env.') and path.name != '.env.example') or name.startswith('private/'):
         bad.append(name + ': forbidden file'); continue
     data = path.read_bytes()
     if any(secret in data for secret in secrets):

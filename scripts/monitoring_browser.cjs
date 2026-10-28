@@ -3,7 +3,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const https = require('node:https');
 let playwright;
-for(const candidate of [process.env.PLAYWRIGHT_MODULE,'playwright',path.join(process.env.USERPROFILE || '', '.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright')].filter(Boolean)) {
+for(const candidate of [process.env.PLAYWRIGHT_MODULE,'playwright', process.env.PLAYWRIGHT_FALLBACK_MODULE].filter(Boolean)) {
   try {playwright=require(candidate);break;} catch {}
 }
 if(!playwright) throw new Error('Install Playwright or set PLAYWRIGHT_MODULE to its module path');
